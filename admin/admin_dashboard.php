@@ -1,5 +1,10 @@
 <?php
-    include_once("../backend/koneksi_recomendation.php");
+    session_start();
+    include "../backend/connect.php";
+    if(!isset($_SESSION['name'])){
+        header("Location: ../login_admin.html");
+        exit();
+    }
 
     // query untuk mengambil semua buku dari database
     $sql = "SELECT * FROM buku";
@@ -35,9 +40,9 @@
         <hr />
         <section class="account-info">
           <p>Name : <?php echo $_SESSION['name']; ?></p>
-          <p>NIS : <?php echo $_SESSION['nis']; ?></p>
-          <p>Kelas : <?php echo $_SESSION['kelas']; ?></p>
+          <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
         </section>
+         <p><a href="../backend/logout.php">logout</a></p>
       </nav>
     </header>
     <main>

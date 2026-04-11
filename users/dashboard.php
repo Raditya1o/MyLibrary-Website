@@ -36,6 +36,7 @@
           <p>NIS : <?php echo $_SESSION["nis"]; ?></p>
           <p>Kelas : <?php echo $_SESSION["kelas"]; ?></p>
         </section>
+         <p><a href="../backend/logout.php">logout</a></p>
       </nav>
     </header>
     <main>
