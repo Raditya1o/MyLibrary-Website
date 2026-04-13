@@ -1,8 +1,8 @@
 <?php
     session_start();
     include "../backend/connect.php";
-    if(!isset($_SESSION['name'])){
-        header("Location: ../login_admin.html");
+    if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
+        header("Location: ../login.html");
         exit();
     }
 
@@ -34,7 +34,7 @@
         <ul>
           <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
           <li class="Management🔧"><a href="management.php">Management🔧</a></li>
-          <li class="Peminjaman⏱️"><a href="peminjaman.php">Peminjaman⏱️</a></li>
+          <li class="Peminjaman⏱️"><a href="list_peminjaman.php">Peminjaman⏱️</a></li>
           <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
         </ul>
         <hr />

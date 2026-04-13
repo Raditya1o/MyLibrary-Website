@@ -16,8 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($row = mysqli_fetch_assoc($numrow)){
         if(password_verify($password, $row["password_user"])){
 
+            $_SESSION["id_admin"] = $row["id_admin"];
             $_SESSION["name"] = $row["name"];
             $_SESSION["NIP"] = $row["NIP"];
+            $_SESSION["role"] = $row["role"];
             
             if($row["role"] == "admin"){
                 header("Location: ../admin/admin_dashboard.php");

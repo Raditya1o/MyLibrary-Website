@@ -1,6 +1,18 @@
-<?php 
-    include "../backend/connect.php";
+<?php
+session_start();
+include "../backend/connect.php";
 
+$id_user = $_SESSION['id'];
+
+$query = mysqli_query($conn, "
+    SELECT p.*, dp.id_detail, dp.tanggal_kembali,
+           b.nama_buku, b.cover
+    FROM peminjaman p
+    JOIN detail_peminjaman dp ON p.id_peminjaman = dp.id_peminjaman
+    JOIN buku b ON dp.id_buku = b.id_buku
+    WHERE p.id_user = '$id_user'
+    ORDER BY p.tanggal_peminjaman DESC
+");
 ?>
 
 <!DOCTYPE html>
@@ -36,22 +48,17 @@
       </section>
       <section class="mybook-container">
         <h1 class="title"><u>Mybook 📕</u></h1>
-        <div class="mybook-list">
-            <div class="image-cover">
-                <img src="" alt="book-cover">
+          <?php while($data = mysqli_fetch_assoc($query)): ?>
+            <div class="mybook-list">
+                <img src="../upload/<?= $data['cover']; ?>" alt="cover">
+                <div>
+                  <h3><?= $data['nama_buku']; ?></h3>
+                  <p>Tanggal Pinjam: <?= $data['tanggal_peminjaman']; ?></p>
+                  <p>Status: <?= $data['status']; ?></p>
+                  <a href="detail_peminjaman.php?id=<?= $data['id_detail']; ?>">Lihat Detail</a>
+              </div>
             </div>
-            <div class="book-information">
-                <div class="book-title">
-                    <h1><b>NAMA BUKU:</b></h1>
-                </div>  
-                <div class="book-content">
-                <p> <b>Genre:</b></p>
-                <p> <b>Peminjam:</b></p>
-                <p> <b>Tanggal Peminjaman:</b></p>
-                <p> <b>Petugas:</b></p>
-                </div>
-            </div>
-        </div>
+          <?php endwhile; ?>
       </section>
     </main>
   </body>

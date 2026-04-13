@@ -1,4 +1,8 @@
   <?php
+  if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
+        header("Location: ../login.html");
+        exit();
+    }
     session_start();
   include_once("../backend/koneksi_recomendation.php");
 

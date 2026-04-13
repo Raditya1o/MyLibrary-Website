@@ -1,5 +1,8 @@
 <?php
-
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
+        header("Location: ../login.html");
+        exit();
+    }
 include "../backend/connect.php";
 
 if(isset($_POST["Add"])) {

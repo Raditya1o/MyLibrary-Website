@@ -50,3 +50,14 @@ main {
   flex: 1;
   gap: 30px;
 }
+
+.pinjam-btn {
+  width: 50%;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 1px 2px 1px rgb(0, 0, 0, 0.5);
+  padding: 10px 12px;
+  background-color: rgb(134, 183, 59);
+  color: white;
+}
