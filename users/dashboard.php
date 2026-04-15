@@ -7,7 +7,7 @@
         exit();
     }
 
-    $sql = "SELECT * FROM buku WHERE recomendation = '1'";
+    $sql = "SELECT * FROM buku WHERE recommendation = '1'";
 
     $result = mysqli_query($conn, $sql);
 ?>
@@ -47,7 +47,7 @@
         <h2 class="title"><u>Recomendation🔥</u></h2>
         <div class="bookshelf">
                  <?php
-          if(mysqli_num_rows($result) >0){
+          if(mysqli_num_rows($result) > 0){
           while($data = mysqli_fetch_assoc($result)){
           ?>          
            <a href="buku.php?id=<?=$data['id_buku']?>" >
@@ -71,8 +71,8 @@
         </div>
       </section>
       <section class="categories-button">
-        <a href="">
-          <button class="btn">Lihat Lainnya</button>
+        <a href="categories.php">
+          <button class="btn" >Lihat Lainnya</button>
         </a>
       </section>
     </main>

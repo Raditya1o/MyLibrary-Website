@@ -2,16 +2,16 @@
     session_start();
     include "../backend/connect.php";
 
-    if(isset($_get['setujui'])) {
+    if(isset($_GET['setujui'])) {
         $id_peminjaman = $_GET['setujui'];
         $id_petugas = $_SESSION['id_admin'];
 
         $check = mysqli_query($conn, "SELECT id_buku from detail_peminjaman where id_peminjaman = '$id_peminjaman'");
-        $details = mysqli_fetch_assoc($check);
+        $detail = mysqli_fetch_assoc($check);
 
         mysqli_query($conn, "UPDATE peminjaman set status='dipinjam' where id_peminjaman = '$id_peminjaman'");
 
-        mysqli_query($conn, "UPDATE detail_peminjaman set id_petugas='$id_petugas' where id_peminjaman='$id_peminjaman'");
+        mysqli_query($conn, "UPDATE detail_peminjaman set id_admin='$id_petugas' where id_peminjaman='$id_peminjaman'");
 
         mysqli_query($conn, "UPDATE buku set stok = stok - 1 where id_buku='{$detail['id_buku']}'");
 
@@ -38,62 +38,62 @@
 
         echo "<script>alert('Buku berhasil dikembalikan!');</script>";
     }
-    $query = mysqli_query($conn, "
-    SELECT p.*, dp.id_buku, dp.tanggal_kembali, dp.id_petugas,
-           b.nama_buku, 
-           a.name as nama_user,
-           pt.name as nama_petugas
-    FROM peminjaman p
-    JOIN detail_peminjaman dp ON p.id_peminjaman = dp.id_peminjaman
-    JOIN buku b ON dp.id_buku = b.id_buku
-    JOIN account a ON p.id_user = a.id
-    LEFT JOIN account pt ON dp.id_petugas = pt.id
-    ORDER BY p.tanggal_peminjaman DESC
-");
-?>
+        $query = mysqli_query($conn, "
+        SELECT p.*, dp.id_buku, dp.tanggal_kembali, dp.id_admin,
+            b.nama_buku, 
+            a.name as nama_user,
+            pt.name as nama_petugas
+        FROM peminjaman p
+        JOIN detail_peminjaman dp ON p.id_peminjaman = dp.id_peminjaman
+        JOIN buku b ON dp.id_buku = b.id_buku
+        JOIN account a ON p.id_user = a.id_account
+        LEFT JOIN account_admin pt ON dp.id_admin = pt.id_admin
+        ORDER BY p.tanggal_peminjaman DESC
+    ");
+    ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Myllibrary - list Peminjaman 📃</title>
-</head>
-<body>
-    <header>
-         <h1>MyLibrary</h1>
-      <nav>
-        <ul>
-          <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
-          <li class="Management🔧"><a href="management.php">Management🔧</a></li>
-          <li class="Peminjaman⏱️"><a href="peminjaman.php">Peminjaman⏱️</a></li>
-          <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
-        </ul>
-        <hr />
-        <section class="account-info">
-          <p>Name : <?php echo $_SESSION['name']; ?></p>
-          <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Myllibrary - list Peminjaman 📃</title>
+    </head>
+    <body>
+        <header>
+            <h1>MyLibrary</h1>
+        <nav>
+            <ul>
+            <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
+            <li class="Management🔧"><a href="management.php">Management🔧</a></li>
+            <li class="Peminjaman⏱️"><a href="peminjaman.php">Peminjaman⏱️</a></li>
+            <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
+            </ul>
+            <hr />
+            <section class="account-info">
+            <p>Name : <?php echo $_SESSION['name']; ?></p>
+            <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
+            </section>
+            <p><a href="../backend/logout.php">logout</a></p>
+        </nav>
+        </header>
+        <main>
+        <section class="search-container">
+            <input class="search" type="search" placeholder="search" />
         </section>
-         <p><a href="../backend/logout.php">logout</a></p>
-      </nav>
-    </header>
-    <main>
-       <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
-      </section>
-      <div class="peminjaman-container">
-        <h1><u> List Peminjaman</u></h1>
-        <table border="1" cellpadding="8">
-        <tr>
-            <th>Nama User</th>
-            <th>Nama Buku</th>
-            <th>Tanggal Pinjam</th>
-            <th>Tanggal Kembali</th>
-            <th>Petugas</th>
-            <th>Status</th>
-            <th>Aksi</th>
-        </tr>
-        <?php while($data = mysqli_fetch_assoc($query)): ?>
+        <div class="peminjaman-container">
+            <h1><u> List Peminjaman</u></h1>
+            <table border="1" cellpadding="8">
+            <tr>
+                <th>Nama User</th>
+                <th>Nama Buku</th>
+                <th>Tanggal Pinjam</th>
+                <th>Tanggal Kembali</th>
+                <th>Petugas</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+            <?php while($data = mysqli_fetch_assoc($query)): ?>
         <tr>
             <td><?= $data['nama_user']; ?></td>
             <td><?= $data['nama_buku']; ?></td>

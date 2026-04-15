@@ -5,13 +5,13 @@
 
     if(isset($_POST['pinjam'])){
 
-    if(!isset($_SESSION['id'])) {
+    if(!isset($_SESSION['id_account'])) {
         header("Location: ../login.html");
         exit();
     }
 
     $id_buku = $_POST['id_buku'];
-    $id_user = $_SESSION['id'];
+    $id_user = $_SESSION['id_account'];
     $date = date('Y-m-d');
 
     $stok = mysqli_query($conn, "SELECT stok from buku where id_buku = '$id_buku'");

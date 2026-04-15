@@ -2,7 +2,7 @@
 session_start();
 include "../backend/connect.php";
 
-$id_user = $_SESSION['id'];
+$id_account = $_SESSION['id_account'];
 
 $query = mysqli_query($conn, "
     SELECT p.*, dp.id_detail, dp.tanggal_kembali,
@@ -10,7 +10,7 @@ $query = mysqli_query($conn, "
     FROM peminjaman p
     JOIN detail_peminjaman dp ON p.id_peminjaman = dp.id_peminjaman
     JOIN buku b ON dp.id_buku = b.id_buku
-    WHERE p.id_user = '$id_user'
+    WHERE p.id_user = '$id_account'
     ORDER BY p.tanggal_peminjaman DESC
 ");
 ?>

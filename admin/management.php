@@ -1,9 +1,9 @@
   <?php
+  session_start();
   if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
         header("Location: ../login.html");
         exit();
     }
-    session_start();
   include_once("../backend/koneksi_recomendation.php");
 
     // pengecekan role, kalau benar dia bukan role admin, maka akan diarahkan ke halaman login
@@ -22,6 +22,6 @@
     <link rel="stylesheet" href="../frontend/managementStyle.css">
 </head>
 <body>
-    
+    Hello
 </body>
 </html>
