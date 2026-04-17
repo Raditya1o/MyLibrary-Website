@@ -2,7 +2,7 @@
 
     // pengecekan role, kalau benar dia bukan role admin, maka akan diarahkan ke halaman login
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
-        header("Location: ../login.html");
+        header("Location: ../login/login_admin.html");
         exit();
     }
     include "../backend/connect.php";

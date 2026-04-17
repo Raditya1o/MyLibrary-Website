@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  font-family: 'Montserrat', 'sans-serif';
+  padding: 0px;
+  margin: 0px;
+}
+
+main {
+  background-color: #212842;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #1a1b1f;
+  width: 100%;
+  height: 50px;
+}
+
+.search {
+  padding: 3px 15px;
+  margin-left: 10%;
+}
+
+a {
+    display: flex;
+    justify-content: left;
+}
+
+.tambah-container {
+    display: flex;
+    justify-content: center;
+  background-color: #191919;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  width: 380px;
+  padding: 40px 30px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.tambah-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tambah-container input,
+.tambah-container textarea,
+.tambah-container select {
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.tambah-container textarea {
+  min-height: 80px;
+}
+
+
+.tambah-container button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
+}

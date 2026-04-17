@@ -2,9 +2,10 @@
     session_start();
     include "../backend/connect.php";
 
+    $id_petugas = $_SESSION['id_admin'];
+
     if(isset($_GET['setujui'])) {
         $id_peminjaman = $_GET['setujui'];
-        $id_petugas = $_SESSION['id_admin'];
 
         $check = mysqli_query($conn, "SELECT id_buku from detail_peminjaman where id_peminjaman = '$id_peminjaman'");
         $detail = mysqli_fetch_assoc($check);
@@ -18,9 +19,14 @@
         echo "<script>alert('Peminjaman disetujui!');</script>";
     }
     if(isset($_GET['tolak'])) {
+
         $id_peminjaman = $_GET['tolak'];
-        mysqli_query($conn, "UPDATE peminjaman SET status='ditolak' 
-            WHERE id_peminjaman='$id_peminjaman'");
+        mysqli_query($conn, "UPDATE peminjaman SET status='ditolak' WHERE id_peminjaman='$id_peminjaman'");
+
+        mysqli_query($conn, "UPDATE detail_peminjaman set id_admin='$id_petugas' where id_peminjaman='$id_peminjaman'");
+
+        mysqli_query($conn, "UPDATE detail_peminjaman SET tanggal_kembali=CURDATE() WHERE id_peminjaman='$id_peminjaman'");
+
         echo "<script>alert('Peminjaman ditolak!');</script>";
     }
 
@@ -32,6 +38,7 @@
         $detail = mysqli_fetch_assoc($cek);
         
         mysqli_query($conn, "UPDATE peminjaman SET status='dikembalikan' WHERE id_peminjaman='$id_peminjaman'");
+
         mysqli_query($conn, "UPDATE detail_peminjaman SET tanggal_kembali=CURDATE() WHERE id_peminjaman='$id_peminjaman'");
 
         mysqli_query($conn, "UPDATE buku SET stok = stok + 1 WHERE id_buku='{$detail['id_buku']}'");

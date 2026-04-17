@@ -1,7 +1,7 @@
   <?php
   session_start();
   if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
-        header("Location: ../login.html");
+        header("Location: ../login/login_admin.html");
         exit();
     }
   include_once("../backend/koneksi_recomendation.php");
@@ -22,6 +22,35 @@
     <link rel="stylesheet" href="../frontend/managementStyle.css">
 </head>
 <body>
-    Hello
+       <header>
+      <h1>MyLibrary</h1>
+      <nav>
+        <ul>
+          <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
+          <li class="Management🔧"><a href="management.php">Management🔧</a></li>
+          <li class="Peminjaman⏱️"><a href="list_peminjaman.php">Peminjaman⏱️</a></li>
+          <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
+        </ul>
+        <hr />
+        <section class="account-info">
+          <p>Name : <?php echo $_SESSION['name']; ?></p>
+          <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
+        </section>
+         <p><a href="../backend/logout.php">logout</a></p>
+      </nav>
+    </header>
+    <main>
+       <section class="search-container">
+        <input class="search" type="search" placeholder="search" />
+      </section>
+    <section class="management-container">
+      <h1><u>Management 🔧</u></h1>
+        <div class="management-list">
+          <a class="tambah-btn" href="tambah_buku.php">Tambah buku</a>
+          <a class="penerbit-btn" href="tambah_penerbit.php">Tambah Penerbit</a>
+          <a class="tambahKategori-btn" href="tambah_kategori.php">Tambah_kategori</a>
+        </div>
+      </section>
+    </main>
 </body>
 </html>

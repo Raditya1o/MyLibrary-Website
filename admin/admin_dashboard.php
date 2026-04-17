@@ -2,7 +2,7 @@
     session_start();
     include "../backend/connect.php";
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
-        header("Location: ../login.html");
+        header("Location: ../login/login_admin.html");
         exit();
     }
 

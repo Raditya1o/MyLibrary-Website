@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyLibrary - Registration</title>
-    <link rel="stylesheet" href="./frontend/loginStyle.css" />
+    <title>MyLibrary - Login</title>
+    <link rel="stylesheet" href="../frontend/loginStyle.css" />
   </head>
   <body>
     <header>
       <h3>MyLibrary</h3>
     </header>
     <div class="login-container">
-      <form action="./backend/koneksi_registrasi.php" method="post">
-        <h1>Buat Akun Baru</h1>
-
-
+      <form action="../backend/koneksi_login_admin.php" method="post">
+        <h1>Login Admin</h1>
         <div class="input-box">
           <input
             type="text"
@@ -24,27 +22,6 @@
             required
           />
         </div>
-
-        <div class="input-box">
-          <input
-            type="text"
-            id="kelas"
-            name="kelas"
-            placeholder="kelas"
-            required
-          />
-        </div>
-
-        <div class="input-box">
-          <input
-            type="text"
-            id="nis"
-            name="nis"
-            placeholder="nis"
-            required
-          />
-        </div>
-
         <div class="input-box">
           <input
             type="password"
@@ -54,11 +31,11 @@
             required
           />
         </div>
-          <div class="login-btn">
-            <button type="submit" name="submit">ENTER</button>
+        <div class="login-btn">
+            <button type="submit" name="submit" >ENTER</button>
         </div>
         <p class="register-link">
-          Kembali ke halaman <a href="login.html">Login</a>
+          Forgot Password? <a href="reset_password_admin.html">Reset here</a>
         </p>
       </form>
     </div>

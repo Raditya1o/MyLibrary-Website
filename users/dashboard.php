@@ -3,7 +3,7 @@
     include "../backend/koneksi_recomendation.php";
 
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
-        header("Location: ../login.html");
+        header("Location: ../login/login.html");
         exit();
     }
 

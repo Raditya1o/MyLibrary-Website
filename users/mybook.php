@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
+        header("Location: ../login/login.html");
+        exit();
+    }
 include "../backend/connect.php";
 
 $id_account = $_SESSION['id_account'];
@@ -50,7 +54,7 @@ $query = mysqli_query($conn, "
         <h1 class="title"><u>Mybook 📕</u></h1>
           <?php while($data = mysqli_fetch_assoc($query)): ?>
             <div class="mybook-list">
-                <img src="../upload/<?= $data['cover']; ?>" alt="cover">
+                <img class="image-cover"src="../upload/<?= $data['cover']; ?>" alt="cover">
                 <div>
                   <h3><?= $data['nama_buku']; ?></h3>
                   <p>Tanggal Pinjam: <?= $data['tanggal_peminjaman']; ?></p>

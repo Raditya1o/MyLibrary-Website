@@ -64,3 +64,58 @@ main {
   padding: 3px 15px;
   margin-left: 10%;
 }
+
+.management-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 10%;
+}
+
+.management-container h1 {
+  color: white;
+   font-size: 35px;
+  padding: 10px;
+}
+
+.management-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 20px;
+}
+
+.management-list a {
+  padding: 20px 24px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+.management-list .tambah-btn {
+  color: rgb(6, 190, 6);
+  background-color: rgb(6, 100, 6);
+  border: 1px solid green;
+}
+
+.management-list .penerbit-btn{
+  color: rgb(81, 81, 245);
+  background-color: rgb(0, 0, 117);
+  border: 1px solid rgb(0, 0, 251);
+}
+
+.management-list .tambahKategori-btn {
+  color: rgb(243, 243, 7);
+  background-color: rgb(171, 171, 2);
+  border: 1px solid rgb(255, 255, 0);
+}
+
+.management-list a:hover {
+  color: white;
+  text-shadow: 0 0 2px white;
+  border: 1px solid white;
+  transition: all 0.1s ease-in;
+  box-shadow: 0 2px 1px white;
+}

@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
+        header("Location: ../login/login.html");
+        exit();
+    }
     include_once("../backend/koneksi_recomendation.php");
 
     $sql = "SELECT * FROM buku";
