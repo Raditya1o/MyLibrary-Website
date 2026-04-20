@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     // pengecekan role, kalau benar dia bukan role admin, maka akan diarahkan ke halaman login
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
         header("Location: ../login/login_admin.html");

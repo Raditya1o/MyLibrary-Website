@@ -64,7 +64,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Myllibrary - list Peminjaman 📃</title>
+        <link rel="stylesheet" href="../frontend/listPeminjamanStyle.css"/>
+        <title>Myllibrary - list Peminjaman ⏱️</title>
     </head>
     <body>
         <header>
@@ -73,7 +74,7 @@
             <ul>
             <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
             <li class="Management🔧"><a href="management.php">Management🔧</a></li>
-            <li class="Peminjaman⏱️"><a href="peminjaman.php">Peminjaman⏱️</a></li>
+            <li class="Peminjaman⏱️"><a href="list_peminjaman.php">Peminjaman⏱️</a></li>
             <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
             </ul>
             <hr />
@@ -89,7 +90,7 @@
             <input class="search" type="search" placeholder="search" />
         </section>
         <div class="peminjaman-container">
-            <h1><u> List Peminjaman</u></h1>
+            <h1><u> List Peminjaman ⏱️</u></h1>
             <table border="1" cellpadding="8">
             <tr>
                 <th>Nama User</th>
