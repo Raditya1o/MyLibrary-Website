@@ -29,7 +29,7 @@
           <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
           <li class="Management🔧"><a href="management.php">Management🔧</a></li>
           <li class="Peminjaman⏱️"><a href="list_peminjaman.php">Peminjaman⏱️</a></li>
-          <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
+          <li class="Feedback💬"><a href="list_feedback.php">Feedback💬</a></li>
         </ul>
         <hr />
         <section class="account-info">
