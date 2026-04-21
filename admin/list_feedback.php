@@ -11,6 +11,7 @@
               LEFT JOIN account on saran.id_account = account.id_account";
 
     $query = mysqli_query($conn, $check);
+    $total = mysqli_num_rows($query);
 
 ?>
 
@@ -19,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../frontend/...">
+    <link rel="stylesheet" href="../frontend/listFeedbackStyle.css" />
     <title>Mylibrary - list feedback</title>
 </head>
 <body>
@@ -45,13 +46,18 @@
         <input class="search" type="search" placeholder="search" />
       </section>
       <section class="list_feedback-container">
+        <h1><u>List Feedback</u></h1>
+        <div class="all-feedback">
+          <p>Total feedback: <br> <?php echo $total?> feedback <p>
+        </div>
         <?php 
-        if(mysqli_num_rows($query) > 0){
+        if($total > 0){
             while($data = mysqli_fetch_assoc($query)){
             ?>
             <div class="feedback-list">
-                <p><b>nama:</b> <?php echo $data["name"]; ?></p>
+                <p><b>Nama:</b> <?php echo $data["name"]; ?></p>
                 <p><?php echo $data["isi_saran"]; ?></p>
+                <p><b>Tanggal saran:</b><?php echo $data["tanggal_saran"]?></p>
             </div>
             <?php
             }   
