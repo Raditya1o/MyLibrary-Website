@@ -10,7 +10,7 @@ include "../backend/connect.php";
 if(isset($_POST["Add"])) {
     $title = $_POST["title-book"];
     $description = $_POST['description'];
-
+    $stok = $_POST["stok"];
     $cover = $_FILES["cover"]["name"];
     $tmp = $_FILES["cover"]["tmp_name"];
 
@@ -21,9 +21,9 @@ if(isset($_POST["Add"])) {
 
     if(move_uploaded_file($tmp, $upload)){
 
-        $query = "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description)
-        Values ('$title', '$cover', '$penerbit', '$kategori', '$description')";
-        
+        $query = "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description, stok)
+        Values ('$title', '$cover', '$penerbit', '$kategori', '$description', '$stok')";
+
         if(Mysqli_query($conn, $query)) {
             echo"Buku Berhasil Ditambahkan";
             header("Location: admin_dashboard.php");
@@ -71,6 +71,7 @@ if(isset($_POST["Add"])) {
                 }
             ?>
         </select>
+        <input type="number" name="stok" placeholder="Masukkan Stok Buku" required>
         <button type="submit" name="Add">Tambah buku</button>
     </form>
 </div>

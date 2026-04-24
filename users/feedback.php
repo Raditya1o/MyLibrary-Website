@@ -46,14 +46,17 @@
       </nav>
     </header>
     <main>
-        <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
-      </section>
+         <section class="search-container">
+        <form action="search_and_sort.php" method="GET">
+          <input class="search-input" type="search" name="search" placeholder="search" />
+          <button class="btn-search" type="submit">Search</button>
+        </form>
+      </section>  
         <section class="feedback-container">
             <h1><u>Feedback 💬<u></h1>
             <form method="post">
             <textarea name="saran" id="saran" placeholder="masukkan saran/feedback" required></textarea>    
-            <button type="submit" name="submit">kirim</button>    
+            <button class="submit-btn" type="submit" name="submit">kirim</button>    
             </form>
         </section>
     </main>

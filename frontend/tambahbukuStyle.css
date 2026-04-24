@@ -61,6 +61,7 @@ a {
   color: white;
   border-radius: 5px;
   font-family: inherit;
+  resize: none;
 }
 
 .tambah-container textarea {

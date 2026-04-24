@@ -40,8 +40,11 @@
       </nav>
     </header>
     <main>
-      <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
+     <section class="search-container">
+        <form action="search_and_sort.php" method="GET">
+          <input class="search-input" type="search" name="search" placeholder="search" />
+          <button class="btn-search" type="submit">Search</button>
+        </form>
       </section>
       <section class="recomended-containter">
         <h2 class="title"><u>Recomendation🔥</u></h2>

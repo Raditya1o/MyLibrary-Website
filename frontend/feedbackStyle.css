@@ -66,6 +66,31 @@ main {
   margin-left: 10%;
 }
 
+.search-container form {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.search-container form .btn-search {
+  padding: 3px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container form .btn-search:hover {
+  background-color: #317033;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 3px 15px;
+  margin-left: 10%;
+}
+
 .feedback-container {
   display: flex;
   flex-direction: column;
@@ -95,7 +120,7 @@ form textarea {
   min-height: 80px;
 }
 
-form button {
+.feedback-container form button {
   padding: 10px;
   width: 91%;
   background-color: #0ec61a;

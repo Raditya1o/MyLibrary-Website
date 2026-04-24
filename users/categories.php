@@ -8,6 +8,8 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
 
     $sql = "SELECT * FROM buku";
 
+    $categories = mysqli_query($conn, "SELECT * FROM kategori_buku");
+    
     $result = mysqli_query($conn, $sql);
 ?>
 
@@ -40,19 +42,23 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
     </header>
     <main>
       <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
+        <form action="search_and_sort.php" method="GET">
+          <input class="search-input" type="search" name="search" placeholder="search" />
+          <button class="btn-search" type="submit">Search</button>
+        </form>
       </section>
       <section class="categories-container">
         <h1><u>Categories📕</u></h1>
-        <section class="genre-filter">
-          <button class="btn-filter">Komik</button>
-          <button class="btn-filter">Cerita Anak</button>
-          <button class="btn-filter">Nonfiksi</button>
-          <button class="btn-filter">Bisnis</button>
-          <button class="btn-filter">Sains</button>
-          <button class="btn-filter">Fantasi</button>
-          <button class="btn-filter">Jurnal</button>
-          <button class="btn-filter">Biografi</button>
+         <section class="genre-filter">
+          <?php
+            while($category = mysqli_fetch_assoc($categories)){
+          ?>
+            <a href="search_and_sort.php?id_category=<?php echo $category['id_kategori']; ?>&name_category=<?php echo $category['nama_kategori']; ?>">
+              <button class="btn-filter"><?php echo $category['nama_kategori']; ?></button>
+            </a>
+          <?php
+            }
+          ?>
         </section>
         <div class="bookshelf">
           <?php 

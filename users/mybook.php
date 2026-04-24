@@ -47,8 +47,11 @@ $query = mysqli_query($conn, "
       </nav>
     </header>
     <main>
-      <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
+       <section class="search-container">
+        <form action="search_and_sort.php" method="GET">
+          <input class="search-input" type="search" name="search" placeholder="search" />
+          <button class="btn-search" type="submit">Search</button>
+        </form>
       </section>
       <section class="mybook-container">
         <h1 class="title"><u>Mybook 📕</u></h1>
