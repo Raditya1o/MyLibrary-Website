@@ -62,7 +62,7 @@ $query = mysqli_query($conn, "
                   <h3><?= $data['nama_buku']; ?></h3>
                   <p>Tanggal Pinjam: <?= $data['tanggal_peminjaman']; ?></p>
                   <p>Status: <?= $data['status']; ?></p>
-                  <a href="detail_peminjaman.php?id=<?= $data['id_detail']; ?>">Lihat Detail</a>
+                  <a class="btn-detail" href="detail_peminjaman.php?id=<?= $data['id_detail']; ?>">Lihat Detail</a>
               </div>
             </div>
           <?php endwhile; ?>

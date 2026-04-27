@@ -11,25 +11,30 @@ if(isset($_POST["Add"])) {
     $title = $_POST["title-book"];
     $description = $_POST['description'];
     $stok = $_POST["stok"];
+    $tahun = $_POST["tahun"];
+    $ISBN = $_POST["ISBN"];
     $cover = $_FILES["cover"]["name"];
     $tmp = $_FILES["cover"]["tmp_name"];
 
     $penerbit = $_POST["penerbit"];
     $kategori = $_POST["kategori"];
+    $penulis = $_POST["penulis"];
 
     $upload = "../upload/" . basename($cover);
 
     if(move_uploaded_file($tmp, $upload)){
 
-        $query = "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description, stok)
-        Values ('$title', '$cover', '$penerbit', '$kategori', '$description', '$stok')";
+        $query = mysqli_prepare($conn, "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description, stok, tahun, ISBN, id_penulis)
+        Values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        if(Mysqli_query($conn, $query)) {
-            echo"Buku Berhasil Ditambahkan";
+        mysqli_stmt_bind_param($query, "ssiisiisi", $title, $cover, $penerbit, $kategori, $description, $stok, $tahun, $ISBN, $penulis);
+
+        if(mysqli_stmt_execute($query)) {
+            echo"<script>alert('Buku Berhasil Ditambahkan');</script>";
             header("Location: admin_dashboard.php");
             exit();
         }else {
-            echo"Buku Gagal Ditambahkan!";
+            echo"<script>alert('Buku Gagal Ditambahkan!');</script>";
         }
     }
 }
@@ -53,6 +58,7 @@ if(isset($_POST["Add"])) {
         <form method="post" enctype="multipart/form-data">
         <input type="file" name="cover" required>
         <input type="text" name="title-book" placeholder="Masukkan Nama Buku" required>
+        <input type="text" name="ISBN" placeholder="Masukkan IBSN buku" required>
         <textarea name="description" placeholder="Masukkan Deskripsi Buku"></textarea>
         <select name="penerbit" id="penerbit" >
             <?php
@@ -71,7 +77,15 @@ if(isset($_POST["Add"])) {
                 }
             ?>
         </select>
+            <select name="penulis" id="penulis" placeholder="Masukkan Penulis Buku">
+                <?php 
+                    $penulis = mysqli_query($conn, "SELECT * from penulis_buku");
+                    while($list_penulis = mysqli_fetch_assoc($penulis)){
+                        echo "<option value='{$list_penulis['id_penulis']}'>{$list_penulis['nama_penulis']}</option>";
+                    }
+                ?>
         <input type="number" name="stok" placeholder="Masukkan Stok Buku" required>
+        <input type="number" name="tahun" placeholder="Masukkan Tahun Terbit buku" required>
         <button type="submit" name="Add">Tambah buku</button>
     </form>
 </div>

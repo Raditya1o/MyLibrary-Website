@@ -110,21 +110,32 @@ form {
   gap: 20px;
 }
 
-form textarea {
+.feedback-container form textarea {
   background-color: #1a1b1f;
   color: white;
   border: 1px solid white;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 8px;
   width: 88%;
-  min-height: 80px;
+  min-height: 100px;
+  resize: none;
 }
 
 .feedback-container form button {
   padding: 10px;
   width: 91%;
-  background-color: #0ec61a;
+  background-color: #10a71a;
   color: white;
-  border-radius: 12px;
+  border-radius: 8px;
+  border: 1px solid white;
+  text-decoration: none;
+}
+
+.feedback-container form button:hover {
+  padding: 10px;
+  width: 91%;
+  background-color: #0e5413;
+  color: white;
+  border-radius: 8px;
   border: 1px solid white;
 }

@@ -33,17 +33,31 @@ if(!$book){
           <button class="btn-search" type="submit">Search</button>
         </form>
       </section>
-       <a href="categories.php">Kembali</a>
+       <a class="back-btn" href="categories.php">Kembali</a>
       <div class="book-details">
         <div class="book-cover">
         <img class="book-img" src="../upload/<?= $book['cover']; ?>" alt="<?= $book['nama_buku']; ?>">
         </div>
         <div class="book-information">
-        <h1> <u>Nama Buku:</u> <br> <?= $book['nama_buku']; ?></h1>
-        <p> <u>Description:</u> <br> <?= $book['description']; ?></p>
-        <p> <u>Genre Buku: </u> <?= $book['nama_kategori']; ?></p>
-        <p> <u>Penerbit:</u> <?= $book['nama_penerbit']; ?></p>
-        <p> <u>Stock:</u> <?= $book['stok']; ?></p>
+            <h1> <?= $book['nama_buku']; ?></h1>
+            <div class="class-category">
+                <p> <?= $book['nama_kategori']; ?></p>
+            </div>
+            <div class="information-section">
+                <div class="penerbit-info"> 
+                    <p> <span class="label">Penerbit:</span> <br> <?= $book['nama_penerbit']; ?></p>
+                </div>
+                <div class="tahun-info">
+                    <p> <span class="label">Tahun Terbit:</span> <br> <?= $book['tahun_terbit'] ?? 'none'; ?></p>
+                </div>
+            </div>
+            <hr>
+            <div class="description-info">
+                <p> <span class="label">Description:</span> <br> <?= $book['description']; ?></p>
+            </div>
+            <div class="stock-info">
+                <p> <span class="label">Stock:</span> <?= $book['stok']; ?></p>
+            </div>
         <form action="../backend/peminjaman.php" method="POST">
             <input type="hidden" name="id_buku" value="<?= $book['id_buku']; ?>">
             <button class="pinjam-btn" type="submit" name="pinjam">Pinjam Buku</button>

@@ -4,6 +4,7 @@
   padding: 0px;
   margin: 0px;
   color: white;
+  text-decoration: none;
 }
 
 main {
@@ -57,16 +58,16 @@ main {
 }
 
 .book-cover {  
-  width: 250px;
+
   display: flex;
   margin-left: 30px;
   flex-shrink:0;
 }
 
-.book-img {
+.book-img { 
+  height: 350px;
   width: 100%;
-  height: auto;
-  max-width: 250px;
+  object-fit: cover;
 }
 
 .book-information {
@@ -77,12 +78,92 @@ main {
 }
 
 .pinjam-btn {
-  width: 50%;
+  width: 30%;
   cursor: pointer;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 1px 2px 1px rgb(0, 0, 0, 0.5);
   padding: 10px 12px;
-  background-color: rgb(134, 183, 59);
+  background-color: rgb(30, 105, 37);
+  border: 1px solid #4CAF50;
   color: white;
 }
+.pinjam-btn:hover {
+  background-color: rgb(13, 47, 16);
+}
+
+.class-category {
+  border: 1px solid white;
+  width: 100px;
+  padding: 5px;
+  background-color: rgb(18, 59, 89);
+  border: 1px solid rgb(19, 86, 134);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.class-category p {
+  color: rgb(19, 151, 245);
+  font-weight: 500;
+}
+
+.information-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.information-section p {
+  color: rgb(19, 151, 245);
+  font-weight: 500;
+}
+
+.information-section .penerbit-info,
+.information-section .tahun-info,
+.description-info {
+  flex: 1;
+  border-radius: 8px; 
+  padding: 13px;
+  background-color: rgb(18, 59, 89);
+  border: 1px solid rgb(19, 86, 134);
+}
+
+.description-info label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.description-info p{
+  line-height: 1.2;
+}
+
+
+.label {
+  color: white;
+  font-weight: 500;
+}
+
+.stock-info {
+  border-radius: 8px; 
+  padding: 13px;
+  background-color: rgb(1, 48, 8);
+  border: 1px solid rgb(27, 84, 22);
+  width: 100px;
+}
+
+.stock-info p {
+  color: rgb(74, 219, 7);
+  font-weight: 500;
+  text-align: center;
+}
+
+.back-btn {
+display: inline-block;
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #1a1b1f;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+} 

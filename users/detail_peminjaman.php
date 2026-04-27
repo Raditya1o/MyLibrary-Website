@@ -19,14 +19,20 @@ $query = mysqli_query($conn, "
 
 <!DOCTYPE html>
 <html>
-<head><title>Detail Peminjaman</title></head>
+<head><title>Detail Peminjaman</title>
+      <link rel="stylesheet" href="../frontend/detailPeminjamanStyle.css">
+</head>
 <body>
-    <a href="mybook.php">Kembali</a>
-    <img src="../upload/<?= $data['cover']; ?>" width="150">
-    <h2><?= $data['nama_buku']; ?></h2>
-    <p>Tanggal Pinjam : <?= $data['tanggal_peminjaman']; ?></p>
-    <p>Tanggal Kembali: <?= $data['tanggal_kembali'] ?? 'Belum ditentukan'; ?></p>
-    <p>Petugas        : <?= $data['nama_petugas'] ?? 'Belum disetujui'; ?></p>
-    <p>Status         : <?= $data['status']; ?></p>
+    <div class="detail-container">
+        <a href="mybook.php" class="back-link">Kembali</a>
+        <img src="../upload/<?= $data['cover']; ?>" class="book-img-detail">
+        <h2 class="book-title"><?= $data['nama_buku']; ?></h2>
+        <div class="detail-info">
+            <p><span class="detail-label">Tanggal Pinjam :</span> <span class="detail-value"><?= $data['tanggal_peminjaman']; ?></span></p>
+            <p><span class="detail-label">Tanggal Kembali:</span> <span class="detail-value"><?= $data['tanggal_kembali'] ?? 'Belum ditentukan'; ?></span></p>
+            <p><span class="detail-label">Petugas        :</span> <span class="detail-value"><?= $data['nama_petugas'] ?? 'Belum disetujui'; ?></span></p>
+            <p><span class="detail-label">Status         :</span> <span class="detail-value"><?= $data['status']; ?></span></p>
+        </div>
+    </div>
 </body>
 </html>

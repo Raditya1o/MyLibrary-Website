@@ -112,9 +112,10 @@ main {
 }
 
 .btn-filter {
+  border: 1px solid white;
+  border-radius: 8px;
   cursor: pointer;
   padding: 10px;
-  box-shadow: 2px 4px 1px rgb(0, 0, 0, 0.5);
   font-weight: 500;
 }
 
@@ -126,7 +127,7 @@ main {
   padding: 20px;
   gap: 20px;
   width: 80%;
-  border: 1px solid white;
+  border: 1px solid rgb(128, 128, 128);
   background-color: #1a1b1f;
   margin-top: 20px;
   height: auto;
