@@ -46,19 +46,22 @@
           <button class="btn-search" type="submit">Search</button>
         </form>
       </section>
+
       <section class="recomended-containter">
         <h2 class="title"><u>Recomendation🔥</u></h2>
         <div class="bookshelf">
-                 <?php
-          if(mysqli_num_rows($result) > 0){
-          while($data = mysqli_fetch_assoc($result)){
-          ?>          
+          <?php
+            if(mysqli_num_rows($result) > 0){
+            while($data = mysqli_fetch_assoc($result)){
+          ?>
+
            <a href="buku.php?id=<?=$data['id_buku']?>" >
             <div class="book">
               <img src="../upload/<?php echo $data['cover']; ?>">
               <h3><?php echo $data['nama_buku']; ?></h3>
             </div>
             </a>
+
            <?php
           }
           }else{
@@ -67,17 +70,20 @@
           ?>
         </div>
       </section>
+
       <section class="popular-containter">
         <h2 class="title"><u>Popular</u></h2>
         <div class="bookshelf">
    
         </div>
       </section>
+
       <section class="categories-button">
         <a href="categories.php">
           <button class="btn" >Lihat Lainnya</button>
         </a>
       </section>
+      
     </main>
   </body>
 </html>

@@ -49,6 +49,7 @@
           <a class="tambah-btn" href="tambah_buku.php">Tambah buku</a>
           <a class="penerbit-btn" href="tambah_penerbit.php">Tambah Penerbit</a>
           <a class="tambahKategori-btn" href="tambah_kategori.php">Tambah_kategori</a>
+          <a class="tambahPenulis-btn" href="tambah_penulis.php">Tambah Penulis</a>
         </div>
       </section>
     </main>

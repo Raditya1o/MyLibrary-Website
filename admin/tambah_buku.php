@@ -11,7 +11,7 @@ if(isset($_POST["Add"])) {
     $title = $_POST["title-book"];
     $description = $_POST['description'];
     $stok = $_POST["stok"];
-    $tahun = $_POST["tahun"];
+    $tahun = $_POST["tahun_terbit"];
     $ISBN = $_POST["ISBN"];
     $cover = $_FILES["cover"]["name"];
     $tmp = $_FILES["cover"]["tmp_name"];
@@ -24,7 +24,7 @@ if(isset($_POST["Add"])) {
 
     if(move_uploaded_file($tmp, $upload)){
 
-        $query = mysqli_prepare($conn, "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description, stok, tahun, ISBN, id_penulis)
+        $query = mysqli_prepare($conn, "INSERT INTO buku (nama_buku, cover, id_penerbit, id_kategori, description, stok, tahun_terbit, ISBN, id_penulis)
         Values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         mysqli_stmt_bind_param($query, "ssiisiisi", $title, $cover, $penerbit, $kategori, $description, $stok, $tahun, $ISBN, $penulis);
@@ -85,7 +85,7 @@ if(isset($_POST["Add"])) {
                     }
                 ?>
         <input type="number" name="stok" placeholder="Masukkan Stok Buku" required>
-        <input type="number" name="tahun" placeholder="Masukkan Tahun Terbit buku" required>
+        <input type="number" name="tahun_terbit" placeholder="Masukkan Tahun Terbit buku" required>
         <button type="submit" name="Add">Tambah buku</button>
     </form>
 </div>
