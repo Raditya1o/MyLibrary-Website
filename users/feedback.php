@@ -12,8 +12,9 @@
         $saran = $_POST["saran"];
         $id_user = $_SESSION["id_account"];
 
-        $query = "INSERT INTO saran (id_account, isi_saran) values ('$id_user', '$saran')";
-        $add = mysqli_query($conn, $query);
+        $query = mysqli_prepare($conn, "INSERT INTO saran (id_account, isi_saran) VALUES (?, ?)");
+        mysqli_stmt_bind_param($query, "is", $id_user, $saran);
+        $add = mysqli_stmt_execute($query);
 
     }
 

@@ -55,9 +55,9 @@
             while($data = mysqli_fetch_assoc($query)){
             ?>
             <div class="feedback-list">
-                <p><b>Nama:</b> <?php echo $data["name"]; ?></p>
-                <p><?php echo $data["isi_saran"]; ?></p>
-                <p><b>Tanggal saran:</b><?php echo $data["tanggal_saran"]?></p>
+                <p class="feedback-name"><b>Nama:</b> <?php echo $data["name"]; ?></p>
+                <p class="feedback-content"><?php echo $data["isi_saran"]; ?></p>
+                <p class="feedback-date"><?php echo $data["tanggal_saran"]; ?></p>
             </div>
             <?php
             }   

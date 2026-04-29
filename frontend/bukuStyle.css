@@ -7,8 +7,11 @@
   text-decoration: none;
 }
 
-main {
+body {
   background-color: #212842;
+}
+
+main {
   min-height: 100vh;
 }
 
@@ -58,7 +61,6 @@ main {
 }
 
 .book-cover {  
-
   display: flex;
   margin-left: 30px;
   flex-shrink:0;
@@ -77,7 +79,9 @@ main {
   gap: 30px;
 }
 
-.pinjam-btn {
+.pinjam-btn,
+.edit-btn,
+.delete-btn {
   width: 30%;
   cursor: pointer;
   border: none;
@@ -87,6 +91,7 @@ main {
   background-color: rgb(30, 105, 37);
   border: 1px solid #4CAF50;
   color: white;
+  text-align: center;
 }
 .pinjam-btn:hover {
   background-color: rgb(13, 47, 16);
@@ -167,3 +172,42 @@ display: inline-block;
   border: 1px solid rgb(255, 255, 255);
   border-radius: 8px;
 } 
+.back-btn:hover {
+  background-color: rgb(26, 27, 31);
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: rgb(6, 145, 196);
+  border: 1px solid rgb(19, 118, 154);
+  color: white;
+}
+.edit-btn:hover {
+  background-color: rgb(6, 35, 46);
+  border: 1px solid rgb(28, 132, 170);
+  color: rgb(37, 185, 222);
+}
+
+.delete-btn {
+  background-color: rgb(196, 6, 6);
+  border: 1px solid rgb(142, 13, 13);
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: rgb(46, 6, 6);
+  border: 1px solid rgb(142, 13, 13);
+  color: rgb(222, 37, 37);
+}
+
+.button-style {
+  display: flex;
+  gap: 20px;
+}
+
+.book {
+  margin-bottom: 20px;
+}
+

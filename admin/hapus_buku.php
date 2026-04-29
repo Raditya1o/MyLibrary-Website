@@ -26,7 +26,7 @@
     if(!empty($cover) && file_exists("../upload/" . $cover)){
         unlink("../upload/" . $cover);
     }
-
+    
     $delete = "DELETE From buku where id_buku='$id'";
     $query = mysqli_query($conn, $delete);
 
