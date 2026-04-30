@@ -66,7 +66,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../frontend/listPeminjamanStyle.css"/>
-        <title>Myllibrary - list Peminjaman ⏱️</title>
+        <title>Mylibrary - list Peminjaman ⏱️</title>
     </head>
     <body>
         <header>
@@ -114,12 +114,20 @@
             <td>
                 <?php if($data['status'] == 'menunggu'): ?>
                     <a href="?setujui=<?= $data['id_peminjaman']; ?>"
-                       onclick="return confirm('Setujui peminjaman ini?')">Setujui</a> |
+                       onclick="return confirm('Setujui peminjaman ini?')">Setujui</a>
+
                     <a href="?tolak=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Tolak peminjaman ini?')">Tolak</a>
+
                 <?php elseif($data['status'] == 'dipinjam'): ?>
+
                     <a href="?kembali=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Tandai buku sudah dikembalikan?')">Kembalikan</a>
+
+                <?php elseif($data['status'] == 'ditolak' || $data['status'] == 'dikembalikan') :?>
+                    <a href="../backend/hapus_peminjaman_admin.php?id=<?= $data['id_peminjaman']; ?>"
+                       onclick="return confirm('Hapus peminjaman ini?')">Hapus</a>
+
                 <?php else: ?>
                     -
                 <?php endif; ?>

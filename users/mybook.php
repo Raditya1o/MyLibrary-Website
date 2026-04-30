@@ -62,12 +62,13 @@
                     <div>
                       <h3><?= $data['nama_buku']; ?></h3>
                       <p>Tanggal Pinjam: <?= $data['tanggal_peminjaman']; ?></p>
-                      <p>Status: <?php $status = $data['status'];
+                      <p>Status: <?php 
+                      $status = $data['status'];
                         if ($status == 'dipinjam') {
                           echo "<span style='color: lightblue'>Dipinjam</span>";
-                          } else if ($status = 'menunggu') {
+                          } else if ($status == 'menunggu') {
                             echo "<span style='color: orange'>Menunggu</span>";
-                          } elseif ($status = 'dikembalikan') {
+                          } elseif ($status == 'dikembalikan') {
                             echo "<span style='color: green'>Dikembalikan</span>";
                           } else {
                             echo "<span style='color: red'>Ditolak</span>";
@@ -93,7 +94,7 @@
                       <?php
                       if($data['status'] != 'dipinjam'){ 
                         ?>
-                          <a class="btn-hapus" href="hapus_peminjaman.php?id=<?= $data['id_peminjaman']; ?>" onclick="return confirm('Batalkan peminjaman ini?')">Batalkan</a>
+                          <a class="btn-hapus" href="../backend/hapus_peminjaman.php?id=<?= $data['id_peminjaman']; ?>" onclick="return confirm('Batalkan peminjaman ini?')">Batalkan</a>
                       <?php
                       }
                     ?> 

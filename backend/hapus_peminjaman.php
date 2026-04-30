@@ -11,19 +11,27 @@
         die("Id Tidak ditemukan");
     }
     $id = $_GET['id'];
+    $id_user = $_SESSION['id_account'];
 
     if(!is_numeric($id)){
         die("id peminjaman tidak valid!");
     }
 
-    $delete = "DELETE From peminjaman where id_peminjaman='$id'";
-    $query = mysqli_query($conn, $delete);
+    $check = mysqli_query($conn, "SELECT * FROM peminjaman WHERE id_peminjaman='$id' AND id_user='$id_user'");
+    if(mysqli_num_rows($check) > 0){
 
-    if($query){
-       header("Location: mybook.php?status=hapus");
+        $detail_peminjaman = mysqli_query($conn, "DELETE FROM detail_peminjaman WHERE id_peminjaman='$id'");
+
+        $peminjaman = mysqli_query($conn, "DELETE FROM peminjaman WHERE id_peminjaman='$id' AND id_user='$id_user'");
+
+         if($peminjaman){
+       header("Location: ../users/mybook.php?status=hapus");
         exit;
-    }else{
+        }else{
         echo"Gagal membatalkan peminjaman";
+        }
+    } else{
+        die("Peminjaman tidak ditemukan atau Anda tidak memiliki izin untuk menghapus peminjaman ini!");
     }
 
 ?>
