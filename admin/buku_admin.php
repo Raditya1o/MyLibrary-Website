@@ -13,10 +13,11 @@ if(!isset($_GET['id'])){
 
 $id = $_GET['id'];
 
-$query = mysqli_query($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit 
+$query = mysqli_query($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit, penulis_buku.nama_penulis, penulis_buku.foto_penulis 
                     FROM buku 
                     left join kategori_buku on buku.id_kategori = kategori_buku.id_kategori
                     left join penerbit_buku on buku.id_penerbit = penerbit_buku.id_penerbit
+                    left join penulis_buku on buku.id_penulis = penulis_buku.id_penulis
                     WHERE buku.id_buku='$id'");
 $book = mysqli_fetch_assoc($query);
 
@@ -57,7 +58,13 @@ if(!$book){
                 <div class="tahun-info">
                     <p> <span class="label">Tahun Terbit:</span> <br> <?= $book['tahun_terbit'] ?? 'none'; ?></p>
                 </div>
+                <div class="ISBN-info">
+                    <p> <span class="label">ISBN:</span> <br> <?= $book['ISBN'] ?? 'none'; ?></p>
+                </div>
             </div>
+            <div class="penulis-info">
+                    <p> <span class="label">Penulis:</span> <br> <?= $book['nama_penulis'] ?? 'none'; ?></p>
+                </div>
             <hr>
             <div class="description-info">
                 <p> <span class="label">Description:</span> <br> <?= $book['description']; ?></p>

@@ -39,16 +39,31 @@ li a {
   color: black;
 }
 
-.btn-detail {
+.btn-detail,
+.btn-hapus {
   display: inline-block;
   text-decoration: none;
   padding: 5px 20px;
-  color: greenyellow;
-  background-color: #0d2b0e;
-  border: 1px solid #1c581e;
   border-radius: 8px;
   margin-top: 12px;
   cursor: pointer;
+}
+
+.btn-detail{
+    color: greenyellow;
+  background-color: #0d2b0e;
+  border: 1px solid #1c581e;
+}
+
+.btn-hapus {
+  color: white;
+  background-color: red;
+  border: 1px solid darkred;
+}
+.btn-hapus:hover {
+  color: white;
+  background-color: rgb(143, 1, 1);
+  border: 1px solid rgb(71, 0, 0);
 }
 
 .btn-detail:hover {

@@ -119,19 +119,25 @@ main {
   align-items: flex-start;
 }
 
-.information-section p {
+.information-section .label {
   color: rgb(19, 151, 245);
   font-weight: 500;
 }
 
 .information-section .penerbit-info,
 .information-section .tahun-info,
+.information-section .ISBN-info,
+.penulis-info,
 .description-info {
   flex: 1;
   border-radius: 8px; 
   padding: 13px;
   background-color: rgb(18, 59, 89);
   border: 1px solid rgb(19, 86, 134);
+}
+
+.penulis-info{
+  display: flex;
 }
 
 .description-info label{

@@ -49,7 +49,8 @@
         SELECT p.*, dp.id_buku, dp.tanggal_kembali, dp.id_admin,
             b.nama_buku, 
             a.name as nama_user,
-            pt.name as nama_petugas
+            pt.name as nama_petugas,
+            (DATEDIFF(CURDATE(), p.tanggal_peminjaman) - 2) AS hari_telat
         FROM peminjaman p
         JOIN detail_peminjaman dp ON p.id_peminjaman = dp.id_peminjaman
         JOIN buku b ON dp.id_buku = b.id_buku
@@ -100,6 +101,7 @@
                 <th>Petugas</th>
                 <th>Status</th>
                 <th>Aksi</th>
+                <th>denda / 1 hari</th>
             </tr>
             <?php while($data = mysqli_fetch_assoc($query)): ?>
         <tr>
@@ -121,6 +123,14 @@
                 <?php else: ?>
                     -
                 <?php endif; ?>
+            </td>
+            <td>
+                <?php 
+                $denda = ($data['hari_telat'] > 0 && $data['status'] == 'dipinjam')
+                    ? $data['hari_telat'] * 1000
+                    : 0;
+                echo "Rp " . $denda;
+                    ?>
             </td>
         </tr>
         <?php endwhile; ?>
