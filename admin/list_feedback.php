@@ -58,6 +58,7 @@
                 <p class="feedback-name"><b>Nama:</b> <?php echo $data["name"]; ?></p>
                 <p class="feedback-content"><?php echo $data["isi_saran"]; ?></p>
                 <p class="feedback-date"><?php echo $data["tanggal_saran"]; ?></p>
+                <a class="btn-hapus" href="../backend/hapus_feedback.php?id=<?= $data["id_saran"]?>" onclick="return confirm('hapus feedback ini?')">Hapus</a>
             </div>
             <?php
             }   

@@ -148,4 +148,18 @@ main {
   font-size: 14px;
 }
 
+.btn-hapus {
+  width: 100px;
+  text-align: center;
+  padding: 6px 12px;
+  color: white;
+  background-color: red;
+  border: 1px solid darkred;
+  border-radius: 12px;
+}
+.btn-hapus:hover {
+  color: white;
+  background-color: rgb(143, 1, 1);
+  border: 1px solid rgb(71, 0, 0);
+}
 
