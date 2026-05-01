@@ -19,7 +19,7 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyLibrary - Categories📕</title>
-    <link rel="stylesheet" href="../frontend/recomendationStyle.css" />
+    <link rel="stylesheet" href="../frontend/categoriesStyle.css" />
   </head>
   <body>
     <header>

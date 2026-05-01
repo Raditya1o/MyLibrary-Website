@@ -57,6 +57,9 @@ li a:hover {
   transform: translateX(8px);
 }
 
+a {
+  text-decoration: none;
+}
 
 .logout-btn{
   display: inline-block; 

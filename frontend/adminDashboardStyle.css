@@ -58,6 +58,10 @@ li a:hover {
 }
 
 
+a {
+  text-decoration: none;
+}
+
 .logout-btn{
   display: inline-block; 
   padding: 6px 12px;
