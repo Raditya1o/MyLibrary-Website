@@ -16,8 +16,11 @@
         die("id peminjaman tidak valid!");
     }
 
-    $check = mysqli_query($conn, "SELECT status FROM peminjaman WHERE id_peminjaman='$id'");
-    $data = mysqli_fetch_assoc($check);
+    $check_prepared = mysqli_prepare($conn, "SELECT status FROM peminjaman WHERE id_peminjaman=?");
+    mysqli_stmt_bind_param($check_prepared, "i", $id);
+    mysqli_stmt_execute($check_prepared);
+    $result = mysqli_stmt_get_result($check_prepared);
+    $data = mysqli_fetch_assoc($result);
 
     if($data['status'] == 'ditolak' || $data['status'] == 'dikembalikan') {
 

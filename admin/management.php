@@ -19,24 +19,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyLibrary - Management🔧</title>
-    <link rel="stylesheet" href="../frontend/managementStyle.css">
+    <link rel="stylesheet" href="../frontend/recomendationStyle.css">
 </head>
 <body>
        <header>
       <h1>MyLibrary</h1>
       <nav>
         <ul>
-          <li class="List Book📚"><a href="admin_dashboard.php">Recomendation🔥</a></li>
-          <li class="Management🔧"><a href="management.php">Management🔧</a></li>
-          <li class="Peminjaman⏱️"><a href="list_peminjaman.php">Peminjaman⏱️</a></li>
-          <li class="Feedback💬"><a href="list_feedback.php">Feedback💬</a></li>
+          <li class="Recomendation🔥"><a href="admin_dashboard.php"><span class="icon">🔥</span>Recomendation</a></li>
+          <li class="Management🔧"><a href="management.php"><span class="icon">🔧</span>Management</a></li>
+          <li class="Peminjaman⏱️"><a href="list_peminjaman.php"><span class="icon">⏱️</span>Peminjaman</a></li>
+          <li class="Feedback💬"><a href="list_feedback.php"><span class="icon">💬</span>Feedback</a></li>
         </ul>
         <hr />
         <section class="account-info">
           <p>Name : <?php echo $_SESSION['name']; ?></p>
           <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
         </section>
-         <p><a href="../backend/logout.php">logout</a></p>
+         <a class="logout-btn" href="../backend/logout.php">logout</a>
       </nav>
     </header>
     <main>

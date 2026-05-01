@@ -19,25 +19,41 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyLibrary - Categories📕</title>
-    <link rel="stylesheet" href="../frontend/categoriesStyle.css" />
+    <link rel="stylesheet" href="../frontend/recomendationStyle.css" />
   </head>
   <body>
     <header>
       <h1>MyLibrary</h1>
       <nav>
         <ul>
-          <li class="Recomendation🔥"><a href="dashboard.php">Recomendation🔥</a></li>
-          <li class="Categories📕"><a href="categories.php">Categories📕</a></li>
-          <li class="MyBook📋"><a href="mybook.php">MyBook📋</a></li>
-          <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
+          <li class="Recomendation🔥">
+            <a href="dashboard.php">
+            <span class="icon">🔥</span>
+            Recomendation</a>
+          </li>
+          <li class="Categories📕">
+            <a href="categories.php">
+              <span class="icon">📕</span>
+              Categories</a>
+            </li>
+          <li class="MyBook📋">
+            <a href="mybook.php">
+              <span class="icon">📋</span>
+              MyBook</a>
+            </li>
+          <li class="Feedback💬">
+            <a href="feedback.php">
+              <span class="icon">💬</span>
+              Feedback</a>
+            </li>
         </ul>
-        <hr />
+        <hr/>
         <section class="account-info">
           <p>Name : <?php echo $_SESSION["name"]; ?></p>
           <p>NIS : <?php echo $_SESSION["nis"]; ?></p>
           <p>Kelas : <?php echo $_SESSION["kelas"]; ?></p>
         </section>
-        <p><a href="../backend/logout.php">logout</a></p>
+         <a class="logout-btn" href="../backend/logout.php">logout</a>
       </nav>
     </header>
     <main>

@@ -22,20 +22,55 @@ header h1 {
   padding: 12px;
 }
 
+
+ul{
+  margin-top: 30px;
+}
+
+
 ul li {
   list-style: none;
   text-decoration: none;
   margin-bottom: 50px;
 }
 
-li {
-  background-color: white;
+li a {
+  display: block;
   padding: 16px;
-  margin: 10px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease;
 }
 
-a {
+li a .icon {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #1a1b1f;
+  background-color: #212842;
+  border-radius: 8px
+}
+
+li a:hover {
+  background-color: #212842;
+  color: white;
+  border-radius: 8px;
+  transform: translateX(8px);
+}
+
+
+.logout-btn{
+  display: inline-block; 
+  padding: 6px 12px;
+  background-color: red;
+  border: 1px solid rgb(173, 0, 0);
+  border-radius: 12px;
   text-decoration: none;
+  color: white;
+}
+
+.logout-btn:hover{
+  background-color: rgb(157, 0, 0);
+  border: 1px solid rgb(83, 0, 0);
 }
 
 .account-info {

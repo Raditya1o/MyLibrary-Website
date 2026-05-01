@@ -1,5 +1,10 @@
 <?php 
+session_start();
 include "../backend/connect.php";
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user") {
+    header("Location: ../login/login_user.html");
+    exit();
+}
 
 if(!isset($_GET['id'])){
     die("ID tidak ditemukan");
@@ -7,12 +12,15 @@ if(!isset($_GET['id'])){
 
 $id = $_GET['id'];
 
-$query = mysqli_query($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit 
+$query = mysqli_prepare($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit 
                     FROM buku 
                     left join kategori_buku on buku.id_kategori = kategori_buku.id_kategori
                     left join penerbit_buku on buku.id_penerbit = penerbit_buku.id_penerbit
-                    WHERE buku.id_buku='$id'");
-$book = mysqli_fetch_assoc($query);
+                    WHERE buku.id_buku=?");
+mysqli_stmt_bind_param($query, "i", $id);
+mysqli_stmt_execute($query);
+$result = mysqli_stmt_get_result($query);
+$book = mysqli_fetch_assoc($result);
 
 if(!$book){
     die("Buku tidak ditemukan");

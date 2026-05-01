@@ -25,10 +25,26 @@
       <h1>MyLibrary</h1>
       <nav>
         <ul>
-          <li class="Recomendation🔥"><a href="">Recomendation🔥</a></li>
-          <li class="Categories📕"><a href="categories.php">Categories📕</a></li>
-          <li class="MyBook📋"><a href="mybook.php">MyBook📋</a></li>
-          <li class="Feedback💬"><a href="feedback.php">Feedback💬</a></li>
+          <li class="Recomendation🔥">
+            <a href="dashboard.php">
+            <span class="icon">🔥</span>
+            Recomendation</a>
+          </li>
+          <li class="Categories📕">
+            <a href="categories.php">
+              <span class="icon">📕</span>
+              Categories</a>
+            </li>
+          <li class="MyBook📋">
+            <a href="mybook.php">
+              <span class="icon">📋</span>
+              MyBook</a>
+            </li>
+          <li class="Feedback💬">
+            <a href="feedback.php">
+              <span class="icon">💬</span>
+              Feedback</a>
+            </li>
         </ul>
         <hr/>
         <section class="account-info">
@@ -36,7 +52,7 @@
           <p>NIS : <?php echo $_SESSION["nis"]; ?></p>
           <p>Kelas : <?php echo $_SESSION["kelas"]; ?></p>
         </section>
-         <p><a href="../backend/logout.php">logout</a></p>
+         <a class="logout-btn" href="../backend/logout.php">logout</a>
       </nav>
     </header>
     <main>
