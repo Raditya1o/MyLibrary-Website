@@ -15,6 +15,8 @@
         mysqli_query($conn, "UPDATE detail_peminjaman set id_admin='$id_petugas' where id_peminjaman='$id_peminjaman'");
 
         mysqli_query($conn, "UPDATE buku set stok = stok - 1 where id_buku='{$detail['id_buku']}'");
+                                                            
+        mysqli_query($conn, "UPDATE buku set total_pinjam = total_pinjam + 1 where id_buku='{$detail['id_buku']}'");
 
         echo "<script>alert('Peminjaman disetujui!');</script>";
     }
@@ -30,8 +32,8 @@
         echo "<script>alert('Peminjaman ditolak!');</script>";
     }
 
-    if(isset($_GET['kembali'])) {
-        $id_peminjaman = $_GET['kembali'];
+    if(isset($_GET['dikembalikan'])) {
+        $id_peminjaman = $_GET['dikembalikan'];
         
         $cek = mysqli_query($conn, "SELECT id_buku FROM detail_peminjaman 
             WHERE id_peminjaman='$id_peminjaman'");
@@ -121,8 +123,8 @@
 
                 <?php elseif($data['status'] == 'dipinjam'): ?>
 
-                    <a href="?kembali=<?= $data['id_peminjaman']; ?>"
-                       onclick="return confirm('Tandai buku sudah dikembalikan?')">Kembalikan</a>
+                    <a href="?dikembalikan=<?= $data['id_peminjaman']; ?>"
+                       onclick="return confirm('Tandai buku sudah dikembalikan?')">dikembalikan</a>
 
                 <?php elseif($data['status'] == 'ditolak' || $data['status'] == 'dikembalikan') :?>
                     <a href="../backend/hapus_peminjaman_admin.php?id=<?= $data['id_peminjaman']; ?>"

@@ -7,9 +7,19 @@
         exit();
     }
 
-    $sql = "SELECT * FROM buku WHERE recommendation = '1'";
+    $sql_newest = "SELECT * from buku
+                  order by id_buku desc
+                  limit 6
+    ";
 
-    $result = mysqli_query($conn, $sql);
+    $sql_popular = "SELECT * from buku
+            where total_pinjam > (select avg(total_pinjam) from buku)
+            order by total_pinjam desc
+            limit 12
+    ";
+
+    $popular = mysqli_query($conn, $sql_popular);
+    $newest = mysqli_query($conn, $sql_newest)
 ?>
 
 <!doctype html>
@@ -65,10 +75,11 @@
 
       <section class="recomended-containter">
         <h2 class="title"><u>Recomendation🔥</u></h2>
+        <p class="text">buku-buku yang baru ditambahkan<p>
         <div class="bookshelf">
           <?php
-            if(mysqli_num_rows($result) > 0){
-            while($data = mysqli_fetch_assoc($result)){
+            if(mysqli_num_rows($newest) > 0){
+            while($data = mysqli_fetch_assoc($newest)){
           ?>
 
            <a href="buku.php?id=<?=$data['id_buku']?>" >
@@ -89,8 +100,26 @@
 
       <section class="popular-containter">
         <h2 class="title"><u>Popular</u></h2>
+        <p class="text">buku-buku yang melebihi rata-rata peminjaman dalam 1 bulan<p>
         <div class="bookshelf">
-   
+             <?php
+            if(mysqli_num_rows($popular) > 0){
+            while($data = mysqli_fetch_assoc($popular)){
+          ?>
+
+           <a href="buku.php?id=<?=$data['id_buku']?>" >
+            <div class="book">
+              <img src="../upload/<?php echo $data['cover']; ?>">
+              <h3><?php echo $data['nama_buku']; ?></h3>
+            </div>
+            </a>
+
+           <?php
+          }
+          }else{
+            echo "No recomendation yet";
+          } 
+          ?>
         </div>
       </section>
 
