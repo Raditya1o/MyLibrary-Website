@@ -9,19 +9,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if(!preg_match('/^[a-z A-Z]+$/', $name)) {
          echo "<script>alert('Nama tidak boleh unik!'); 
-            window.location.href = '../login/register.html';</script>";
+            window.location.href = '../login/registrasi.html';</script>";
         exit();
     }
 
     if(strlen($name) <= 3){
          echo "<script>alert('Nama tidak boleh kurang dari 4!'); 
-            window.location.href = '../login/register.html';</script>";
+            window.location.href = '../login/registrasi.html';</script>";
         exit();
     }
 
     if(!is_numeric($nis) || strlen($nis) != 9){
           echo "<script>alert('Nis Harus berupa angka dan harus 9 angka!'); 
-            window.location.href = '../login/register.html';</script>";
+            window.location.href = '../login/registrasi.html';</script>";
         exit();
     }
 
@@ -33,12 +33,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if(mysqli_num_rows($check) > 0) {
         echo "<script>alert('Nama telah digunakan!'); 
-            window.location.href = '../login/register.html';</script>";
+            window.location.href = '../login/registrasi.html';</script>";
         exit();
 
     } elseif(mysqli_num_rows($check_nis) > 0) {
          echo "<script>alert('Nis telah digunakan!'); 
-            window.location.href = '../login/register.html';</script>";
+            window.location.href = '../login/registrasi.html';</script>";
         exit();
     }
 
@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             window.location.href = '../login/login.html';</script>";
         exit();
     } else {
-        echo "<script>alert('Registrasi Gagal!'); window.location.href = '../login/register.html';</script>";
+        echo "<script>alert('Registrasi Gagal!'); window.location.href = '../login/registrasi.html';</script>";
     }
     mysqli_stmt_close($add);
 }
