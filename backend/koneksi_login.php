@@ -26,16 +26,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../users/dashboard.php");
             exit();
             }
+            else{
+            echo"<script>alert('Role belum ditentukan!');</script>";
+            header("Location: ../login/login.html");
+            exit();
+            }
         }
         else{
             echo "<script>alert('Password Salah!');</script>";
-            header("Location: ../login.html");
+            header("Location: ../login/login.html");
             exit();
         }
     }
     else{
         echo "<script>alert('Username Tidak Ditemukan!');</script>";
-        header("Location: ../login.html");
+        header("Location: ../login/login.html");
         exit();
     }
 }

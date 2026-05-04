@@ -17,14 +17,14 @@
             mysqli_stmt_bind_param($update, "sss", $hashed_password, $name, $NIP);
             if (mysqli_stmt_execute($update)) {
                 echo "<script>alert('Password Berhasil Diubah!'); 
-                    window.location.href = '../login_admin.html';</script>";
+                    window.location.href = '../login/login_admin.html';</script>";
                 exit();
             } else {
-                echo "<script>alert('Gagal Mengubah Password!'); window.location.href = '../reset_password_admin.html';</script>";
+                echo "<script>alert('Gagal Mengubah Password!'); window.location.href = '../login/reset_password_admin.html';</script>";
             }
             mysqli_stmt_close($update);
         } else {
-            echo "<script>alert('Admin Tidak Ditemukan!'); window.location.href = '../reset_password_admin.html';</script>";
+            echo "<script>alert('Admin Tidak Ditemukan!'); window.location.href = '../login/reset_password_admin.html';</script>";
         }
     }
 ?>
