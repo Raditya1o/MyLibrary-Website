@@ -13,7 +13,6 @@
     ";
 
     $sql_popular = "SELECT * from buku
-            where total_pinjam > (select avg(total_pinjam) from buku)
             order by total_pinjam desc
             limit 12
     ";
@@ -27,8 +26,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyLibrary - Recomendation🔥</title>
+    <title>MyLibrary - Recomendation</title>
     <link rel="stylesheet" href="../frontend/recomendationStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   </head>
   <body>
     <header>
@@ -37,22 +37,22 @@
         <ul>
           <li class="Recomendation🔥">
             <a href="dashboard.php">
-            <span class="icon">🔥</span>
+            <span class="icon"><i class="fa fa-fire"></i></span>
             Recomendation</a>
           </li>
           <li class="Categories📕">
             <a href="categories.php">
-              <span class="icon">📕</span>
+              <span class="icon"><i class="fa fa-book"></i></span>
               Categories</a>
             </li>
           <li class="MyBook📋">
             <a href="mybook.php">
-              <span class="icon">📋</span>
+              <span class="icon"><i class="fa fa-clipboard"></i></span>
               MyBook</a>
             </li>
           <li class="Feedback💬">
             <a href="feedback.php">
-              <span class="icon">💬</span>
+              <span class="icon"><i class="fa fa-comment"></i></span>
               Feedback</a>
             </li>
         </ul>
@@ -69,12 +69,12 @@
      <section class="search-container">
         <form action="search_and_sort.php" method="GET">
           <input class="search-input" type="search" name="search" placeholder="search" />
-          <button class="btn-search" type="submit">Search</button>
+          <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
 
       <section class="recomended-containter">
-        <h2 class="title"><u>Recomendation🔥</u></h2>
+        <h2 class="title"><u>Recomendation</u></h2>
         <p class="text">buku-buku yang baru ditambahkan<p>
         <div class="bookshelf">
           <?php

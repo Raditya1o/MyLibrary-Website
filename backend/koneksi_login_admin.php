@@ -26,15 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../admin/admin_dashboard.php");
                 exit();
             } else {
-                echo "<script>alert('Anda bukan admin!'); window.location.href='../login_admin.html';</script>";
+                echo "<script>alert('Anda bukan admin!'); window.location.href='../login/login_admin.html';</script>";
                 exit();
             }
         } else {
-            echo "<script>alert('Password Salah!'); window.location.href='../login_admin.html';</script>";
+            echo "<script>alert('Password Salah!'); window.location.href='../login/login_admin.html';</script>";
             exit();
         }
     } else {
-        echo "<script>alert('Username Tidak Ditemukan!'); window.location.href='../login_admin.html';</script>";
+        echo "<script>alert('Username Tidak Ditemukan!'); window.location.href='../login/login_admin.html';</script>";
         exit();
     }
 }

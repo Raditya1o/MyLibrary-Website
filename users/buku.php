@@ -32,13 +32,14 @@ if(!$book){
     <meta charset="UTF-8">
     <title><?= $book['nama_buku']; ?></title>
     <link rel="stylesheet" href="../frontend/bukuStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
 <body>
     <main>
      <section class="search-container">
         <form action="search_and_sort.php" method="GET">
           <input class="search-input" type="search" name="search" placeholder="search" />
-          <button class="btn-search" type="submit">Search</button>
+          <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
        <a class="back-btn" href="categories.php">Kembali</a>

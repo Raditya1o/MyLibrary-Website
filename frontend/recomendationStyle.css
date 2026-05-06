@@ -114,6 +114,9 @@ main {
   border: none;
   cursor: pointer;
 }
+.search-container form .btn-search i{
+  margin-right: 10px;
+}
 
 .search-container form .btn-search:hover {
   background-color: #317033;
@@ -194,3 +197,8 @@ main {
 .text {
   color: rgb(228, 228, 228);
 }
+
+a {
+  text-decoration: none;
+}
+

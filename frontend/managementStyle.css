@@ -107,6 +107,8 @@ main {
 .management-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
   margin-left: 10%;
 }
@@ -119,11 +121,14 @@ main {
 
 .management-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 50vh;
   gap: 20px;
+  padding: 10px;
+  background-color: #1a1b1f;
+  border: 1px solid white;
 }
 
 .management-list a {
@@ -149,6 +154,12 @@ main {
   color: rgb(243, 243, 7);
   background-color: rgb(171, 171, 2);
   border: 1px solid rgb(255, 255, 0);
+}
+
+.management-list .tambahPenulis-btn {
+  color: rgb(241, 24, 8);
+  background-color: rgb(111, 8, 8);
+  border: 1px solid rgb(119, 11, 11);
 }
 
 .management-list a:hover {

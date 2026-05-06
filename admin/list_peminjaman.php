@@ -115,19 +115,19 @@
             <td><?= $data['status']; ?></td>
             <td>
                 <?php if($data['status'] == 'menunggu'): ?>
-                    <a href="?setujui=<?= $data['id_peminjaman']; ?>"
+                     <a class="setuju-btn" href="?setujui=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Setujui peminjaman ini?')">Setujui</a>
 
-                    <a href="?tolak=<?= $data['id_peminjaman']; ?>"
+                    <a class="tolak-btn" href="?tolak=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Tolak peminjaman ini?')">Tolak</a>
 
                 <?php elseif($data['status'] == 'dipinjam'): ?>
 
-                    <a href="?dikembalikan=<?= $data['id_peminjaman']; ?>"
+                    <a class="kembali-btn" href="?dikembalikan=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Tandai buku sudah dikembalikan?')">dikembalikan</a>
 
                 <?php elseif($data['status'] == 'ditolak' || $data['status'] == 'dikembalikan') :?>
-                    <a href="../backend/hapus_peminjaman_admin.php?id=<?= $data['id_peminjaman']; ?>"
+                    <a class="hapus-btn" href="../backend/hapus_peminjaman_admin.php?id=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Hapus peminjaman ini?')">Hapus</a>
 
                 <?php else: ?>

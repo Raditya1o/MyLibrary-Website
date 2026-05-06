@@ -157,6 +157,10 @@ main {
   cursor: pointer;
 }
 
+.search-container form .btn-search i{
+  margin-right: 10px;
+}
+
 .search-input {
   padding: 3px 15px;
   margin-left: 10%;

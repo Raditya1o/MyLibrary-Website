@@ -94,3 +94,23 @@ main {
   width: 100px;
   object-fit: cover;
 }
+.search-container form .btn-search i{
+  margin-right: 10px;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: #1a1b1f;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  color: white;
+} 
+
+a{
+  text-decoration: none;
+}
