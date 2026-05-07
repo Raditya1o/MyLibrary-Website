@@ -21,6 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../frontend/listFeedbackStyle.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <title>Mylibrary - list feedback</title>
 </head>
 <body>
@@ -28,10 +29,26 @@
       <h1>MyLibrary</h1>
       <nav>
         <ul>
-          <li class="Recomendation🔥"><a href="admin_dashboard.php"><span class="icon">🔥</span>Recomendation</a></li>
-          <li class="Management🔧"><a href="management.php"><span class="icon">🔧</span>Management</a></li>
-          <li class="Peminjaman⏱️"><a href="list_peminjaman.php"><span class="icon">⏱️</span>Peminjaman</a></li>
-          <li class="Feedback💬"><a href="list_feedback.php"><span class="icon">💬</span>Feedback</a></li>
+          <li class="book-list">
+            <a href="admin_dashboard.php">
+            <span class="icon"><i class="fa fa-book"></i></span>
+            Dashboard</a>
+          </li>
+          <li class="management">
+            <a href="management.php">
+              <span class="icon"><i class="fa fa-wrench"></i></span>
+              Management</a>
+            </li>
+          <li class="peminjaman">
+            <a href="list_peminjaman.php">
+              <span class="icon"><i class="fa fa-clipboard"></i></span>
+              List Peminjaman</a>
+            </li>
+          <li class="feedback_list">
+            <a href="list_feedback.php">
+              <span class="icon"><i class="fa fa-comments"></i></span>
+              List Feedback</a>
+            </li>
         </ul>
         <hr />
         <section class="account-info">
@@ -42,9 +59,12 @@
       </nav>
     </header>
     <main>
-      <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
-      </section>
+       <section class="search-container">
+        <form action="search_and_sort_admin.php" method="GET">
+          <input class="search-input" type="search" name="search" placeholder="search" />
+          <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
+        </form>
+</section>
       <section class="list_feedback-container">
         <h1><u>List Feedback</u></h1>
         <div class="all-feedback">

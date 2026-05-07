@@ -74,7 +74,7 @@
       </section>
 
       <section class="recomended-containter">
-        <h2 class="title"><u>Recomendation</u></h2>
+        <h2 class="title">Recomendation<i class="fa fa-fire"></i></h2>
         <p class="text">buku-buku yang baru ditambahkan<p>
         <div class="bookshelf">
           <?php
@@ -99,7 +99,7 @@
       </section>
 
       <section class="popular-containter">
-        <h2 class="title"><u>Popular</u></h2>
+        <h2 class="title">Popular<i class="fa fa-chart-line"></i></h2>
         <p class="text">buku-buku yang melebihi rata-rata peminjaman dalam 1 bulan<p>
         <div class="bookshelf">
              <?php

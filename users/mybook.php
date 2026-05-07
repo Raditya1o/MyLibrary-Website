@@ -72,7 +72,7 @@
             </form>
           </section>
           <section class="mybook-container">
-            <h1 class="title"><u>Mybook 📕</u></h1>
+            <h1 class="title">Mybook <i class="fa fa-clipboard"></i></h1>
               <?php while($data = mysqli_fetch_assoc($query)): ?>
                 <div class="mybook-list">
                     <img class="image-cover"src="../upload/<?= $data['cover']; ?>" alt="cover">

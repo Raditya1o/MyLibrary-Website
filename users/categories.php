@@ -65,7 +65,7 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
         </form>
       </section>
       <section class="categories-container">
-        <h1><u>Categories📕</u></h1>
+        <h1>Category<i class="fa fa-book"></i></h1>
          <section class="genre-filter">
           <?php
             while($category = mysqli_fetch_assoc($categories)){

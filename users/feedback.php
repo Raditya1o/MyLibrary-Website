@@ -71,7 +71,7 @@
         </form>
       </section>  
         <section class="feedback-container">
-            <h1><u>Feedback 💬<u></h1>
+            <h1>Feedback <i class="fa fa-comment"></i></h1>
             <form method="post">
             <textarea name="saran" id="saran" placeholder="masukkan saran/feedback" required></textarea>    
             <button class="submit-btn" type="submit" name="submit">kirim</button>    

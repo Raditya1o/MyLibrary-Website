@@ -114,3 +114,7 @@ main {
 a{
   text-decoration: none;
 }
+
+.search-container form .btn-search i{
+  margin-right: 10px;
+}

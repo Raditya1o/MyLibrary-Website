@@ -35,6 +35,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../frontend/searchAndSortStyle.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <title>Mylibrary - "<?php echo"$input"?>"</title>
 </head>
 <body>
@@ -42,7 +43,7 @@
      <section class="search-container">
         <form action="search_and_sort_admin.php" method="GET">
           <input class="search-input" type="search" name="search" placeholder="search" />
-          <button class="btn-search" type="submit">Search</button>
+          <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
       <div class="search-result">

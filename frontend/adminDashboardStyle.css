@@ -124,6 +124,10 @@ main {
   margin-left: 10%;
 }
 
+.search-container form .btn-search i{
+  margin-right: 10px;
+}
+
 .categories-container {
   display: flex;
   flex-direction: column;
@@ -146,9 +150,10 @@ main {
 }
 
 .btn-filter {
+  border: 1px solid white;
+  border-radius: 8px;
   cursor: pointer;
   padding: 10px;
-  box-shadow: 2px 4px 1px rgb(0, 0, 0, 0.5);
   font-weight: 500;
 }
 

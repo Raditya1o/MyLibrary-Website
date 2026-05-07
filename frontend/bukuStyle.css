@@ -55,6 +55,7 @@ main {
 .search-input {
   padding: 3px 15px;
   margin-left: 10%;
+  color: black;
 }
 
 .book-details {
