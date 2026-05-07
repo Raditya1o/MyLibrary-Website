@@ -36,7 +36,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../frontend/searchAndSortStyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <title>Mylibrary - "<?php echo"$input"?>"</title>
+    <title>Mylibrary - <?php echo"$input"?></title>
 </head>
 <body>
     <main>
@@ -68,8 +68,6 @@
               <h3 class="book-title"><?php echo $data['nama_buku']; ?></h3>
                 </div>
                 </a>
-
-            </a>
                 <?php
                 }
             }else {
