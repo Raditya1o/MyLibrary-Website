@@ -12,6 +12,17 @@
         exit();
     }
 
+    $query = mysqli_query($conn, "SELECT * from buku");
+    $query_penerbit = mysqli_query($conn, "SELECT * from penerbit_buku");
+    $query_kategori = mysqli_query($conn, "SELECT * from kategori_buku");
+    $query_penulis = mysqli_query($conn, "SELECT * from penulis_buku");
+
+
+    $total = mysqli_num_rows($query);
+    $total_penerbit = mysqli_num_rows($query_penerbit);
+    $total_kategori = mysqli_num_rows($query_kategori);
+    $total_penulis = mysqli_num_rows($query_penulis);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,12 +75,32 @@
         </form>
   </section>
     <section class="management-container">
-      <h1><u>Management 🔧</u></h1>
+      <h1 class="title-management"><u>Management 🔧</u></h1>
         <div class="management-list">
-          <a class="tambah-btn" href="tambah_buku.php">Tambah buku</a>
-          <a class="penerbit-btn" href="tambah_penerbit.php">Tambah Penerbit</a>
-          <a class="tambahKategori-btn" href="tambah_kategori.php">Tambah_kategori</a>
+          <div class="tambah-buku-container">
+            <span class="icon"><i class="fa fa-book"></i></span>
+            <h3>Tambah buku</h3>
+            <p><?php echo $total;?> buku<p>
+            <a class="tambah-btn" href="tambah_buku.php">Tambah buku</a>
+          </div>
+          <div class="tambah-penerbit-container">
+              <span class="icon"><i class="fa fa-newspaper"></i></span>
+              <h3>Tambah Penerbit</h3>
+              <p><?php echo $total_penerbit;?> penerbit<p>
+            <a class="penerbit-btn" href="tambah_penerbit.php">Tambah Penerbit</a>
+          </div>
+          <div class="tambah-kategori-container">
+            <span class="icon"><i class="fa fa-list"></i></span>
+            <h3>Tambah Kategori</h3>
+            <p><?php echo $total_kategori;?> Kategori<p>
+            <a class="tambahKategori-btn" href="tambah_kategori.php">Tambah Kategori</a>
+          </div>
+          <div class="tambah-penulis-container">
+            <span class="icon"><i class="fa fa-pen"></i></span>
+            <h3>Tambah Penulis</h3>
+            <p><?php echo $total_penulis;?> Penulis<p>
           <a class="tambahPenulis-btn" href="tambah_penulis.php">Tambah Penulis</a>
+          </div>
         </div>
       </section>
     </main>
