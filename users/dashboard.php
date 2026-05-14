@@ -100,7 +100,7 @@
 
       <section class="popular-containter">
         <h2 class="title">Popular<i class="fa fa-chart-line"></i></h2>
-        <p class="text">buku-buku yang melebihi rata-rata peminjaman dalam 1 bulan<p>
+        <p class="text">buku-buku yang sering dipinjam<p>
         <div class="bookshelf">
              <?php
             if(mysqli_num_rows($popular) > 0){

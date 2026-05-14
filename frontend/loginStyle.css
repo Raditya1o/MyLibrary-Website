@@ -89,6 +89,9 @@ body {
   padding: 10px;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 .register-btn a {
@@ -119,5 +122,13 @@ body {
 
 .other a {
   color: white;
+  text-decoration: none;
+}
+
+form .back-btn {
+  color : white;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
   text-decoration: none;
 }

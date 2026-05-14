@@ -68,7 +68,7 @@
       <section class="list_feedback-container">
         <h1><u>List Feedback</u></h1>
         <div class="all-feedback">
-          <p>Total feedback: <br> <?php echo $total?> feedback <p>
+          <p class="total-feedback">Total feedback: <br> <?php echo $total?> feedback <p>
         </div>
         <?php 
         if($total > 0){
@@ -83,7 +83,7 @@
             <?php
             }   
         }else{
-            echo"tidak ada data yang masuk";
+            echo"<h1  >tidak ada data yang masuk<h1>";
         }
         ?>
       </section>
