@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($query, "s", $name);
     mysqli_stmt_execute($query);
 
-    $numrow = mysqli_stmt_get_result($query);
+    $result = mysqli_stmt_get_result($query);
 
-    if($row = mysqli_fetch_assoc($numrow)){
+    if($row = mysqli_fetch_assoc($result)){
         if(password_verify($password, $row["password_admin"])){
 
             $_SESSION["id_admin"] = $row["id_admin"];

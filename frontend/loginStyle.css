@@ -75,14 +75,13 @@ body {
   padding: 10px;
   border-radius: 12px;
   border: 1px solid white;
+  cursor: pointer;
 }
 
 .login-btn button:hover {
   background-color: #050505;
   color: white;
-  text-shadow: 1px 1px 5px white;
   transition: all 0.2s ease-out;
-  box-shadow: 1px 1px 5px white;
 }
 
 .register-btn{
@@ -107,9 +106,7 @@ body {
 .register-btn a:hover {
   background-color: #14c720;
   color: white;
-  text-shadow: 1px 1px 5px white;
   transition: all 0.2s ease-out;
-  box-shadow: 1px 1px 5px white;
 }
 
 .other {

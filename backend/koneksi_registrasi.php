@@ -28,22 +28,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // hash password sebelum disimpan ke database
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $check = mysqli_query($conn,"SELECT * from account where name='$name'");
-    $check_nis = mysqli_query($conn,"SELECT * from account where nis='$nis'");
+    $check = mysqli_prepare($conn, "SELECT * from account where name = ? OR nis = ? ");
+    mysqli_stmt_bind_param($check, "ss", $name, $nis);
+    mysqli_stmt_execute($check);
 
-    if(mysqli_num_rows($check) > 0) {
-        echo "<script>alert('Nama telah digunakan!'); 
-            window.location.href = '../login/registrasi.html';</script>";
-        exit();
+    $result_check = mysqli_stmt_get_result($check);
 
-    } elseif(mysqli_num_rows($check_nis) > 0) {
-         echo "<script>alert('Nis telah digunakan!'); 
+    if(mysqli_num_rows($result_check) > 0) {
+        echo "<script>alert('Nama atau NIS telah digunakan!'); 
             window.location.href = '../login/registrasi.html';</script>";
         exit();
     }
-
-    
-
     $add = mysqli_prepare($conn, "INSERT INTO account (name, kelas, nis, password_user) VALUES (?, ?, ?, ?)");
     mysqli_stmt_bind_param($add, "ssss", $name, $kelas, $nis, $hashed_password);
     

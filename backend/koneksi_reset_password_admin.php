@@ -12,9 +12,11 @@
         mysqli_stmt_bind_param($query, "ss", $name, $NIP);
         mysqli_stmt_execute($query);
         $result = mysqli_stmt_get_result($query);
+
         if($row = mysqli_fetch_assoc($result)){
             $update = mysqli_prepare($conn, "UPDATE account_admin SET password_admin = ? WHERE name = ? AND NIP = ?");
             mysqli_stmt_bind_param($update, "sss", $hashed_password, $name, $NIP);
+            
             if (mysqli_stmt_execute($update)) {
                 echo "<script>alert('Password Berhasil Diubah!'); 
                     window.location.href = '../login/login_admin.html';</script>";
