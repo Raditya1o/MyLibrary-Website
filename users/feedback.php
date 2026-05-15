@@ -33,22 +33,22 @@
       <h1>MyLibrary</h1>
       <nav>
        <ul>
-          <li class="Recomendation🔥">
+          <li class="recomemndation-menu">
             <a href="dashboard.php">
             <span class="icon"><i class="fa fa-fire"></i></span>
             Recomendation</a>
           </li>
-          <li class="Categories📕">
+          <li class="categories-menu">
             <a href="categories.php">
               <span class="icon"><i class="fa fa-book"></i></span>
               Categories</a>
             </li>
-          <li class="MyBook📋">
+          <li class="myBook-menu">
             <a href="mybook.php">
               <span class="icon"><i class="fa fa-clipboard"></i></span>
               MyBook</a>
             </li>
-          <li class="Feedback💬">
+          <li class="feedback-menu">
             <a href="feedback.php">
               <span class="icon"><i class="fa fa-comment"></i></span>
               Feedback</a>

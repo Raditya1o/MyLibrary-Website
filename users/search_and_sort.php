@@ -46,7 +46,7 @@
           <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
-      <a class="back-btn" href="dashboard.php">Kembali</a>
+      <a class="back-btn" href="categories.php">Kembali</a>
       <div class="search-result">
         <h1><u><?php 
           if($category_name) {

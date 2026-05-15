@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../backend/koneksi_recomendation.php";
+    include "../backend/connect.php";
 
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
         header("Location: ../login/login.html");
@@ -35,22 +35,22 @@
       <h1>MyLibrary</h1>
       <nav>
         <ul>
-          <li class="Recomendation🔥">
+          <li class="recommendation-menu">
             <a href="dashboard.php">
             <span class="icon"><i class="fa fa-fire"></i></span>
             Recomendation</a>
           </li>
-          <li class="Categories📕">
+          <li class="categories-menu">
             <a href="categories.php">
               <span class="icon"><i class="fa fa-book"></i></span>
               Categories</a>
             </li>
-          <li class="MyBook📋">
+          <li class="mybook-menu">
             <a href="mybook.php">
               <span class="icon"><i class="fa fa-clipboard"></i></span>
               MyBook</a>
             </li>
-          <li class="Feedback💬">
+          <li class="feedback-menu">
             <a href="feedback.php">
               <span class="icon"><i class="fa fa-comment"></i></span>
               Feedback</a>
@@ -81,7 +81,6 @@
             if(mysqli_num_rows($newest) > 0){
             while($data = mysqli_fetch_assoc($newest)){
           ?>
-
            <a href="buku.php?id=<?=$data['id_buku']?>" >
             <div class="book">
               <img src="../upload/<?php echo $data['cover']; ?>">
@@ -92,7 +91,7 @@
            <?php
           }
           }else{
-            echo "No recomendation yet";
+            echo "Tidak ada buku rekomendasi sekarang";
           } 
           ?>
         </div>
@@ -117,7 +116,7 @@
            <?php
           }
           }else{
-            echo "No recomendation yet";
+            echo "Tidak ada buku yang sedang populer sekarang";
           } 
           ?>
         </div>
