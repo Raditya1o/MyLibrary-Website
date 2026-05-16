@@ -69,7 +69,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../frontend/listpeminjamanStyle.css"/>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-        <title>Mylibrary - list Peminjaman ⏱️</title>
+        <title>Mylibrary - list Peminjaman </title>
     </head>
     <body>
         <header>
@@ -112,7 +112,7 @@
         </form>
 </section>
         <div class="peminjaman-container">
-            <h1><u> List Peminjaman ⏱️</u></h1>
+            <h1><u> List Peminjaman <li class="fa fa-clock"></li></u></h1>
             <table border="1" cellpadding="8">
             <tr>
                 <th>Nama User</th>

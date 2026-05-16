@@ -76,18 +76,16 @@ li a {
   padding: 16px;
   text-decoration: none;
   color: white;
-  transition: transform 0.2s ease;
+   transition: transform 0.2s ease;
 }
 
 li a .icon {
   margin-right: 10px;
   padding: 8px;
-    border: 1px solid #1a203e;
+  border: 1px solid #1a203e;
   background-color: #384880;
   border-radius: 8px
 }
-
-.icon
 
 li a:hover {
   background-color: #212842;

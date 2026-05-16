@@ -4,7 +4,7 @@
         header("Location: ../login/login_admin.html");
         exit();
     }
-  include_once("../backend/koneksi_recomendation.php");
+  include "../backend/connect.php";
 
     // pengecekan role, kalau benar dia bukan role admin, maka akan diarahkan ke halaman login
     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
@@ -29,7 +29,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyLibrary - Management🔧</title>
+    <title>MyLibrary - Management</title>
     <link rel="stylesheet" href="../frontend/managementStyle.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>
@@ -75,7 +75,7 @@
         </form>
   </section>
     <section class="management-container">
-      <h1 class="title-management"><u>Management 🔧</u></h1>
+      <h1 class="title-management"><u>Management <li class="fa fa-wrench"></li></u></h1>
         <div class="management-list">
           <div class="tambah-buku-container">
             <span class="icon"><i class="fa fa-book"></i></span>

@@ -66,7 +66,7 @@
         </form>
 </section>
       <section class="list_feedback-container">
-        <h1><u>List Feedback</u></h1>
+        <h1><u>List Feedback<li class="fa fa-comments"></li></u></h1>
         <div class="all-feedback">
           <p class="total-feedback">Total feedback: <br> <?php echo $total?> feedback <p>
         </div>

@@ -29,7 +29,7 @@ if(!$book){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $book['nama_buku']; ?></title>
+    <title>Mylibrary - <?= $book['nama_buku']; ?></title>
     <link rel="stylesheet" href="../frontend/bukuStyle.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 </head>

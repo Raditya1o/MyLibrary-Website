@@ -27,7 +27,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyLibrary - Categories📕</title>
+    <title>MyLibrary - Dashboard</title>
     <link rel="stylesheet" href="../frontend/adminDashboardStyle.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   </head>
@@ -73,7 +73,7 @@
         </form>
       </section>
       <section class="categories-container">
-        <h1><u>Book List📕</u></h1>
+        <h1><u>Book List <i class="fa fa-book"></i></u></h1>
         <section class="genre-filter">
           <?php
             while($category = mysqli_fetch_assoc($categories)){
