@@ -46,6 +46,7 @@
           <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
+       <a class="back-btn" href="admin_dashboard.php">Kembali</a>
       <div class="search-result">
         <h1><u><?php 
           if($category_name) {
@@ -54,7 +55,6 @@
             echo "Search Result for \"" . $input . "\"";
           }
         ?></u></h1>
-        <a href="admin_dashboard.php">Kembali</a>
         <p>Total: <?php echo $check?> result</p>
         <div class="container-search">
         <?php 

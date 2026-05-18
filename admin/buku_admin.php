@@ -13,7 +13,7 @@ if(!isset($_GET['id'])){
 
 $id = $_GET['id'];
 
-$query = mysqli_query($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit, penulis_buku.nama_penulis, penulis_buku.foto_penulis 
+$query = mysqli_query($conn, "SELECT buku.*, kategori_buku.nama_kategori, penerbit_buku.nama_penerbit, penulis_buku.nama_penulis
                     FROM buku 
                     left join kategori_buku on buku.id_kategori = kategori_buku.id_kategori
                     left join penerbit_buku on buku.id_penerbit = penerbit_buku.id_penerbit

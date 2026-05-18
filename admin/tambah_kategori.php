@@ -37,7 +37,7 @@
      <section class="search-container">
         <input class="search" type="search" placeholder="search" />
       </section>
-       <a href="management.php">Kembali</a>
+        <a class="back-btn" href="management.php">Kembali</a>
     <div class="tambah-container">
         <form method="post">
         <input type="text" name="nama_kategori" placeholder="Masukkan nama kategori" required>

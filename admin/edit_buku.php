@@ -78,7 +78,7 @@
      <section class="search-container">
         <input class="search" type="search" placeholder="search" />
       </section>
-       <a href="admin_dashboard.php">Kembali</a>
+       <a class="back-btn" href="management.php">Kembali</a>
         <div class="tambah-container">
         <form method="POST" enctype="multipart/form-data">
         <input type="file" name="cover">

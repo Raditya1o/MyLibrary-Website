@@ -53,7 +53,7 @@ if(isset($_POST["Add"])) {
      <section class="search-container">
         <input class="search" type="search" placeholder="search" />
       </section>
-       <a href="management.php">Kembali</a>
+       <a class="back-btn" href="management.php">Kembali</a>
     <div class="tambah-container">
         <form method="post" enctype="multipart/form-data">
         <input type="file" name="cover" required>
