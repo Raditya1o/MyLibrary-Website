@@ -18,7 +18,8 @@
     $buku = mysqli_fetch_assoc($stok);
 
     if($buku['stok'] < 1 ){
-        echo "<script>alert('Stock Buku Habis!'); window.location.href='../users/buku.php';</script>";
+        echo "<script>alert('Stock Buku Habis!'); history.back();</script>";
+        exit();
     }
      $cek_pinjam = mysqli_query($conn, "
         SELECT p.* FROM peminjaman p
