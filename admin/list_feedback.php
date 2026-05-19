@@ -83,7 +83,7 @@
             <?php
             }   
         }else{
-            echo"<h1  >tidak ada data yang masuk<h1>";
+            echo"<h1>tidak ada data yang masuk ...<git s/h1>";
         }
         ?>
       </section>

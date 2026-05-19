@@ -121,7 +121,7 @@
                 </div>
               <?php endwhile; ?>
               <?php }else{
-               echo "Buku belum ada yang dipinjam"; 
+               echo "<h3>Buku belum ada yang dipinjam ...</h3>"; 
               }?>
           </section>
         </main>

@@ -171,6 +171,7 @@ main {
   flex-direction: column;
   margin-top: 10px;
   margin-left: 10%;
+  color: white;
 }
 
 .title {
