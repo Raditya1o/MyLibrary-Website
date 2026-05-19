@@ -30,7 +30,7 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
           <li class="recommendation-menu">
             <a href="dashboard.php">
             <span class="icon"><i class="fa fa-fire"></i></span>
-            Recomendation</a>
+            Recommendation</a>
           </li>
           <li class="categories-menu">
             <a href="categories.php">

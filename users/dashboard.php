@@ -26,7 +26,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyLibrary - Recomendation</title>
+    <title>MyLibrary - Recommendation</title>
     <link rel="stylesheet" href="../frontend/recomendationStyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
   </head>
@@ -38,7 +38,7 @@
           <li class="recommendation-menu">
             <a href="dashboard.php">
             <span class="icon"><i class="fa fa-fire"></i></span>
-            Recomendation</a>
+            Recommendation</a>
           </li>
           <li class="categories-menu">
             <a href="categories.php">
@@ -74,7 +74,7 @@
       </section>
 
       <section class="recomended-containter">
-        <h2 class="title">Recomendation<i class="fa fa-fire"></i></h2>
+        <h2 class="title">Recommendation<i class="fa fa-fire"></i></h2>
         <p class="text">buku-buku yang baru ditambahkan<p>
         <div class="bookshelf">
           <?php
