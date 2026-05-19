@@ -16,6 +16,11 @@
         mysqli_stmt_bind_param($query, "is", $id_user, $saran);
         $add = mysqli_stmt_execute($query);
 
+        if($add) {
+          echo "<script>alert('Feedback Terkirim !'); 
+            window.location.href = 'feedback.php';</script>";
+        }
+
     }
 
 ?>
