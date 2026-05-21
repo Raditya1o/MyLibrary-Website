@@ -19,8 +19,9 @@ $query = mysqli_query($conn, "
 
 <!DOCTYPE html>
 <html>
-<head><title>Detail Peminjaman</title>
-      <link rel="stylesheet" href="../frontend/detailPeminjamanStyle.css">
+<head>
+    <title>Detail Peminjaman</title>
+    <link rel="stylesheet" href="../frontend/detailPeminjamanStyle.css">
 </head>
 <body>
     <div class="detail-container">

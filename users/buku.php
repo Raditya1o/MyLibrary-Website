@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include "../backend/connect.php";
+
 if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user") {
     header("Location: ../login/login_user.html");
     exit();
@@ -76,7 +77,7 @@ if(!$book){
             </div>
         <form action="../backend/peminjaman.php" method="POST">
             <input type="hidden" name="id_buku" value="<?= $book['id_buku']; ?>">
-            <button class="pinjam-btn" type="submit" name="pinjam">Pinjam Buku</button>
+        <button class="pinjam-btn" type="submit" name="pinjam">Pinjam Buku</button>
         </form>
         </div>
     </main>

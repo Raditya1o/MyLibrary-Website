@@ -11,10 +11,10 @@
     $nama = $_POST["nama_penerbit"];
     $email = $_POST["email_penerbit"];
 
-        $query = "INSERT INTO penerbit_buku (nama_penerbit, email_penerbit) 
-        Values ('$nama', '$email')";
+        $query = mysqli_prepare($conn, "INSERT INTO penerbit_buku (nama_penerbit, email_penerbit) Values ( ?, ?)");
+        mysqli_stmt_bind_param($query, "ss", $nama, $email);
         
-        if(Mysqli_query($conn, $query)) {
+        if(mysqli_stmt_execute($query)) {
             echo"Kategori Berhasil Ditambahkan";
             header("Location: admin_dashboard.php");
             exit();

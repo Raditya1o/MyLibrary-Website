@@ -1,18 +1,20 @@
 <?php
-
-    session_start();
-if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
-        header("Location: ../login/login_admin.html");
-        exit();
-    }
 include "../backend/connect.php";
+session_start();
+
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
+    header("Location: ../login/login_admin.html");
+    exit();
+}
 
 if(isset($_POST["Add"])) {
+    
     $title = $_POST["title-book"];
     $description = $_POST['description'];
     $stok = $_POST["stok"];
     $tahun = $_POST["tahun_terbit"];
     $ISBN = $_POST["ISBN"];
+
     $cover = $_FILES["cover"]["name"];
     $tmp = $_FILES["cover"]["tmp_name"];
 
