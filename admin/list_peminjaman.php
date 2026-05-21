@@ -2,6 +2,11 @@
     session_start();
     include "../backend/connect.php";
 
+     if(!isset($_SESSION["role"]) || $_SESSION["role"] != "admin"){
+        header("Location: ../login/login_admin.html");
+        exit();
+     }
+
     $id_petugas = $_SESSION['id_admin'];
 
     if(isset($_GET['setujui'])) {
@@ -134,11 +139,11 @@
             <td><?= $data['status']; ?></td>
             <td>
                 <?php if($data['status'] == 'menunggu'): ?>
-                     <a class="setuju-btn" href="?setujui=<?= $data['id_peminjaman']; ?>"
+                    <a class="setuju-btn" href="?setujui=<?= $data['id_peminjaman']; ?>"
                        onclick="return confirm('Setujui peminjaman ini?')">Setujui</a>
 
                     <a class="tolak-btn" href="?tolak=<?= $data['id_peminjaman']; ?>"
-                       onclick="return confirm('Tolak peminjaman ini?')">Tolak</a>
+                       onclick="return confirm('Tolak peminjaman ini?')">Tolak</a>  
 
                 <?php elseif($data['status'] == 'dipinjam'): ?>
 

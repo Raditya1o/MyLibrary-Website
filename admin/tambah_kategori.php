@@ -10,10 +10,10 @@
     if(isset($_POST["Add"])) {
     $nama = $_POST["nama_kategori"];
 
-        $query = "INSERT INTO kategori_buku (nama_kategori) 
-        Values ('$nama')";
+        $query = mysqli_prepare($conn, "INSERT INTO kategori_buku (nama_kategori)Values (?)");
+        mysqli_stmt_bind_param($query, "s", $nama);
         
-        if(Mysqli_query($conn, $query)) {
+        if(mysqli_stmt_execute($query)) {
             echo"Kategori Berhasil Ditambahkan";
             header("Location: admin_dashboard.php");
             exit();
