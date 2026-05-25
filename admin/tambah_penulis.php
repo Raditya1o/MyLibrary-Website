@@ -27,11 +27,10 @@
             mysqli_stmt_bind_param($query, "sss", $foto_penulis, $nama, $description);
             
             if(mysqli_stmt_execute($query)) {
-                echo"Penulis Berhasil Ditambahkan";
-                header("Location: admin_dashboard.php");
+                header("Location: admin_dashboard.php?status=update");
                 exit();
             }else {
-                echo"Penulis Gagal Ditambahkan!";
+                echo"<script>alert('Penulis Gagal Ditambahkan!');</script>";
             }
 
             } else {
@@ -55,9 +54,6 @@
 </head>
 <body>
     <main>
-     <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
-      </section>
       <a class="back-btn" href="management.php">Kembali</a>
      <div class="tambah-container">
         <form method="post" enctype="multipart/form-data">

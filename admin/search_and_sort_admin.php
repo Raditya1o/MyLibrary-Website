@@ -39,6 +39,39 @@
     <title>Mylibrary - "<?php echo"$input"?>"</title>
 </head>
 <body>
+      <header>
+      <h1>MyLibrary</h1>
+      <nav>
+          <ul>
+          <li class="book-list">
+            <a href="admin_dashboard.php">
+            <span class="icon"><i class="fa fa-book"></i></span>
+            Dashboard</a>
+          </li>
+          <li class="management">
+            <a href="management.php">
+              <span class="icon"><i class="fa fa-wrench"></i></span>
+              Management</a>
+            </li>
+          <li class="peminjaman">
+            <a href="list_peminjaman.php">
+              <span class="icon"><i class="fa fa-clipboard"></i></span>
+              List Peminjaman</a>
+            </li>
+          <li class="feedback_list">
+            <a href="list_feedback.php">
+              <span class="icon"><i class="fa fa-comments"></i></span>
+              List Feedback</a>
+            </li>
+        </ul>
+        <hr />
+        <section class="account-info">
+          <p>Name : <?php echo $_SESSION['name']; ?>  </p>
+          <p>NIP : <?php echo $_SESSION['NIP']; ?></p>
+        </section>
+         <a class="logout-btn" href="../backend/logout.php">logout</a>
+      </nav>
+    </header>
     <main>
      <section class="search-container">
         <form action="search_and_sort_admin.php" method="GET">
@@ -46,7 +79,6 @@
           <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
-       <a class="back-btn" href="admin_dashboard.php">Kembali</a>
       <div class="search-result">
         <h1><u><?php 
           if($category_name) {

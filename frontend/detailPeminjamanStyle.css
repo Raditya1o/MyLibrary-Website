@@ -9,7 +9,13 @@
 }
 
 body {
-  background-color: #212842;
+      background: linear-gradient(135deg,
+    #020221,
+    #030327,
+    #0b1b4d,
+    #132967,
+    #0e2157
+  );
   min-height: 100vh;
   padding: 20px;
 }
@@ -24,14 +30,18 @@ body {
   display: inline-block;
   margin-bottom: 20px;
   padding: 8px 16px;
-  background-color: #4CAF50;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); 
   color: white;
-  border-radius: 6px;
   font-weight: 600;
 }
 
 .back-link:hover {
-  background-color: #317033;
+  background-color: #052506;
+  color: rgb(0, 255, 0);
+  border: 1px solid #317033;
   cursor: pointer;
 }
 
@@ -49,7 +59,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #4CAF50;
+  color: white;
 }
 
 .detail-info p {
@@ -66,7 +76,7 @@ body {
 
 .detail-label {
   font-weight: 600;
-  color: #4CAF50;
+  color: white;
 }
 
 .detail-value {

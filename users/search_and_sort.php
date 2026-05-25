@@ -39,6 +39,40 @@
     <title>Mylibrary - <?php echo"$input"?></title>
 </head>
 <body>
+     <header>
+      <h1>MyLibrary</h1>
+      <nav>
+        <ul>
+          <li class="recommendation-menu">
+            <a href="dashboard.php">
+            <span class="icon"><i class="fa fa-fire"></i></span>
+            Recommendation</a>
+          </li>
+          <li class="categories-menu">
+            <a href="categories.php">
+              <span class="icon"><i class="fa fa-book"></i></span>
+              Categories</a>
+            </li>
+          <li class="mybook-menu">
+            <a href="mybook.php">
+              <span class="icon"><i class="fa fa-clipboard"></i></span>
+              MyBook</a>
+            </li>
+          <li class="feedback-menu">
+            <a href="feedback.php">
+              <span class="icon"><i class="fa fa-comment"></i></span>
+              Feedback</a>
+            </li>
+        </ul>
+        <hr/>
+        <section class="account-info">
+          <p>Name : <?php echo $_SESSION["name"]; ?></p>
+          <p>NIS : <?php echo $_SESSION["nis"]; ?></p>
+          <p>Kelas : <?php echo $_SESSION["kelas"]; ?></p>
+        </section>
+         <a class="logout-btn" href="../backend/logout.php">logout</a>
+      </nav>
+    </header>
     <main>
      <section class="search-container">
         <form action="search_and_sort.php" method="GET">
@@ -46,7 +80,6 @@
           <button class="btn-search" type="submit"><i class="fa fa-search"></i>Search</button>
         </form>
       </section>
-      <a class="back-btn" href="categories.php">Kembali</a>
       <div class="search-result">
         <h1><u><?php 
           if($category_name) {

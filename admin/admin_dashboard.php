@@ -18,8 +18,8 @@
     }
 
     if(isset($_GET['status']) && $_GET['status'] == 'update'){
-    echo "<script>alert('Buku berhasil diupdate!');</script>";
-    } 
+    echo "<script>alert('Data berhasil diupdate!');</script>";
+    }
 ?>
 
 <!doctype html>

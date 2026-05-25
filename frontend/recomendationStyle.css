@@ -8,12 +8,14 @@
 header {
   display: flex;
   flex-direction: column;
-  background-color: #1a1b1f;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   width: 20%;
   height: 100vh;
   padding: 12px;
   position: fixed;
-  box-shadow: 2px 4px 1px rgb(0, 0, 0, 0.5);
+
 }
 header h1 {
   color: white;
@@ -22,6 +24,15 @@ header h1 {
   padding: 12px;
 }
 
+body {
+    background: linear-gradient(135deg,
+    #020221,
+    #030327,
+    #0b1b4d,
+    #132967,
+    #0e2157
+  );
+}
 
 ul{
   margin-top: 30px;
@@ -46,12 +57,14 @@ li a .icon {
   margin-right: 10px;
   padding: 8px;
   border: 1px solid #1a203e;
-  background-color: #384880;
+  background-color: #010e2f;
   border-radius: 8px
 }
 
 li a:hover {
-  background-color: #212842;
+    background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: white;
   border-radius: 8px;
   transform: translateX(8px);
@@ -61,15 +74,15 @@ li a:hover {
 .logout-btn{
   display: inline-block; 
   padding: 6px 12px;
-  background-color: red;
-  border: 1px solid rgb(173, 0, 0);
+  background-color: #010e2f;
   border-radius: 12px;
   text-decoration: none;
   color: white;
 }
 
 .logout-btn:hover{
-  background-color: rgb(157, 0, 0);
+  color: red;
+  background-color: rgb(22, 2, 2);
   border: 1px solid rgb(83, 0, 0);
 }
 
@@ -77,12 +90,13 @@ li a:hover {
   margin-top: 9px;
   margin-bottom: 10px;
   padding: 10px;
-  border-radius: 10px;
-  background-color: white;
+  border-radius: 8px;
+  color: white;
+   background-color: rgba(255, 255, 255, 0.04); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
 }
 
-main {
-  background-color: #212842;
+main { 
   margin-left: 20%;
   min-height: 100vh;
 }
@@ -90,7 +104,7 @@ main {
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #1a1b1f;
+  background-color: transparent;
   width: 100%;
   height: 50px;
 }
@@ -109,8 +123,9 @@ main {
 
 .search-container form .btn-search {
   padding: 3px 15px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #260872;
+  color: rgb(255, 255, 255);
+  border-radius: 1px;
   border: none;
   cursor: pointer;
 }
@@ -147,10 +162,13 @@ main {
   justify-content: center;
   flex-direction: row;
   padding: 20px;
+  margin-top: 20px;
   gap: 20px;
   width: 80%;
-  border: 1px solid white;
-  background-color: #1a1b1f;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   margin-top: 20px;
   height: auto;
   overflow: visible;
@@ -172,9 +190,11 @@ main {
 }
 
 .btn {
-  border: 1px solid white;
-  border-radius: 2px;
-  background-color: #1a1b1f;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);  
   color: white;
   padding: 16px;
   cursor: pointer;

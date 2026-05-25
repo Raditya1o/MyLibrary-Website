@@ -2,6 +2,11 @@
 session_start();
 include "../backend/connect.php";
 
+if(!isset($_SESSION["role"]) || $_SESSION["role"] != "user"){
+        header("Location: ../login/login.html");
+        exit();
+    }   
+
 $id_detail = $_GET['id'];
 
 $query = mysqli_query($conn, "

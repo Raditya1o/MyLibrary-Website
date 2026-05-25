@@ -14,11 +14,10 @@
         mysqli_stmt_bind_param($query, "s", $nama);
         
         if(mysqli_stmt_execute($query)) {
-            echo"Kategori Berhasil Ditambahkan";
-            header("Location: admin_dashboard.php");
+            header("Location: admin_dashboard.php?status=update");
             exit();
         }else {
-            echo"Kategori Gagal Ditambahkan!";
+            echo"<script>alert('Kategori Gagal Ditambahkan!');</script>";
         }
     }
 ?>
@@ -34,9 +33,6 @@
 </head>
 <body>
     <main>
-     <section class="search-container">
-        <input class="search" type="search" placeholder="search" />
-      </section>
         <a class="back-btn" href="management.php">Kembali</a>
     <div class="tambah-container">
         <form method="post">

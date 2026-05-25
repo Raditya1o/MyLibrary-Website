@@ -5,8 +5,17 @@
   margin: 0px;
 }
 
+body {
+    background: linear-gradient(135deg,
+    #020221,
+    #030327,
+    #0b1b4d,
+    #132967,
+    #0e2157
+  );
+}
+
 main {
-  background-color: #212842;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,8 +45,10 @@ a {
 .tambah-container {
     display: flex;
     justify-content: center;
-  background-color: #191919;
-  border: 1px solid white;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: white;
   border-radius: 10px;
   width: 380px;
@@ -55,7 +66,13 @@ a {
 .tambah-container input{
   padding: 10px;
   border: 1px solid #444;
-  background-color: #2a2a2a;
+    background: rgba(255, 255, 255, 0.07); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   color: white;
   border-radius: 5px;
   font-family: inherit;
@@ -64,7 +81,7 @@ a {
 
 .tambah-container button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #260872;
   color: white;
   border: none;
   cursor: pointer;
@@ -78,10 +95,12 @@ a {
   margin-top: 20px;
   margin-left: 30px;
   padding: 10px;
-  background-color: #1a1b1f;
-  border: 1px solid rgb(255, 255, 255);
+   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);  
   color: white;
   cursor: pointer;
-   text-decoration: none;
+  text-decoration: none;
 } 

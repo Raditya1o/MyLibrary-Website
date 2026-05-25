@@ -4,7 +4,15 @@
   margin: 0;
   padding: 0;
 }
-
+body {
+    background: linear-gradient(135deg,
+    #020221,
+    #030327,
+    #0b1b4d,
+    #132967,
+    #0e2157
+  );
+}
 header {
   color: white;
   position: absolute;
@@ -30,8 +38,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #191919;
-  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: white;
   border-radius: 10px;
   width: 380px;
@@ -57,7 +66,7 @@ body {
   background-color: black;
   color: white;
   padding: 5px;
-  border: 1px solid white;
+ border: none;
   border-radius: 5px;
   padding: 10px;
 }
@@ -73,8 +82,8 @@ body {
   background-color: #191919;
   color: white;
   padding: 10px;
+  border:none;
   border-radius: 12px;
-  border: 1px solid white;
   cursor: pointer;
 }
 
@@ -96,18 +105,12 @@ body {
 .register-btn a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #0ec61a;
+  background-color: #260872;
   color: white;
   text-decoration: none;
   border-radius: 12px;
-  border: 1px solid white;
 } 
 
-.register-btn a:hover {
-  background-color: #14c720;
-  color: white;
-  transition: all 0.2s ease-out;
-}
 
 .other {
   display: flex;

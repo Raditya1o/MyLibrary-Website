@@ -40,8 +40,7 @@
     if(isset($_GET['dikembalikan'])) {
         $id_peminjaman = $_GET['dikembalikan'];
         
-        $cek = mysqli_query($conn, "SELECT id_buku FROM detail_peminjaman 
-            WHERE id_peminjaman='$id_peminjaman'");
+        $cek = mysqli_query($conn, "SELECT id_buku FROM detail_peminjaman WHERE id_peminjaman='$id_peminjaman'");
         $detail = mysqli_fetch_assoc($cek);
         
         mysqli_query($conn, "UPDATE peminjaman SET status='dikembalikan' WHERE id_peminjaman='$id_peminjaman'");

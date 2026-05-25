@@ -8,7 +8,13 @@
 }
 
 body {
-  background-color: #212842;
+    background: linear-gradient(135deg,
+    #020221,
+    #030327,
+    #0b1b4d,
+    #132967,
+    #0e2157
+  );
 }
 
 main {
@@ -18,7 +24,7 @@ main {
 .search-container {
   display: flex;
   align-items: center;
-  background-color: #1a1b1f;
+  background-color: transparent;
   width: 100%;
   height: 50px;
 }
@@ -37,7 +43,7 @@ main {
 
 .search-container form .btn-search {
   padding: 3px 15px;
-  background-color: #4CAF50;
+  background-color: #260872;
   color: white;
   border: none;
   cursor: pointer;
@@ -137,8 +143,10 @@ main {
   flex: 1;
   border-radius: 8px; 
   padding: 13px;
-  background-color: rgb(18, 59, 89);
-  border: 1px solid rgb(19, 86, 134);
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
 }
 
 .penulis-info{
@@ -179,8 +187,9 @@ display: inline-block;
   margin-top: 20px;
   margin-left: 30px;
   padding: 10px;
-  background-color: #1a1b1f;
-  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 8px;
 } 
 .back-btn:hover {
